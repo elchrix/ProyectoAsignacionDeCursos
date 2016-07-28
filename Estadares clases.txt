@@ -1,8 +1,12 @@
 Conexion ---> clase con las cadenas de conexion
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 Hola TODOS COMO ES VA JIJIJI
 =======
 Prueba Marvin Lpt
+>>>>>>> Marvin
+=======
+Prueba numero 2 :)
 >>>>>>> Marvin
