@@ -1,2 +1,2 @@
 Conexion ---> clase con las cadenas de conexion
-Prueba Marvin Yoque Lopez
+Prueba Marvin Lpt
