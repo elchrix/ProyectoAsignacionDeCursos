@@ -1,4 +1,4 @@
-Conexion ---> clase con las cadenas de conexion
+Conexion ---> clase con las cadenas de conexion, esto es una prueba de ATM
 <<<<<<< HEAD
 <<<<<<< HEAD
 
