@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Conexion ---> clase con las cadenas de conexion, esto es una prueba de ATM
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11,3 +12,11 @@ Prueba Marvin Lpt
 Prueba numero 2 :)
 >>>>>>> Marvin
 hola hola camaron con cola, ATM
+=======
+Conexion ---> clase con las cadenas de conexion, esto es una prueba
+de Atm, vos sos Cano???
+
+
+
+pero laptom
+>>>>>>> Selvin
