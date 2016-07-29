@@ -100,7 +100,7 @@ namespace AsignaciondeCursos
             MySqlConnection conn = Conexion.ObtenerConexion();
             DataTable dt = new DataTable();
 
-            MySqlCommand cmd = new MySqlCommand("select * from Curso where id_carrera="+id_carrera ,conn);
+            MySqlCommand cmd = new MySqlCommand("select * from Curso where id_carrera='"+id_carrera+"'and id_pensum='"+ id_pensum+"'" ,conn);
             MySqlDataAdapter adapp = new MySqlDataAdapter(cmd);
 
             adapp.Fill(dt);

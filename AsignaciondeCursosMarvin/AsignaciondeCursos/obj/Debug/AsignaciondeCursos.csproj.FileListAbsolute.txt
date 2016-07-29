@@ -24,3 +24,17 @@ C:\Users\Marvin\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\Asignac
 C:\Users\Marvin\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.pdb
 C:\Users\Marvin\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\MySql.Data.dll
 C:\Users\Marvin\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_PensumCarrera.resources
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe.config
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.exe
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.pdb
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.pdb
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\bin\Debug\MySql.Data.dll
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csprojResolveAssemblyReference.cache
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Administrativo.resources
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarAlumno.resources
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarCated.resources
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Login.resources
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_PensumCarrera.resources
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Properties.Resources.resources
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csproj.GenerateResource.Cache
