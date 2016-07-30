@@ -38,3 +38,4 @@ C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMa
 C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_PensumCarrera.resources
 C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Properties.Resources.resources
 C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csproj.GenerateResource.Cache
+C:\Users\Marvin\Documents\GitHub\ProyectoAsignacionDeCursos\AsignaciondeCursosMarvin\AsignaciondeCursos\bin\Debug\itextsharp.xml
