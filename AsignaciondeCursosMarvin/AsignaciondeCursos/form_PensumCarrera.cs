@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Diagnostics;
+using System.Data;
 
 namespace AsignaciondeCursos
 {
@@ -152,9 +153,36 @@ namespace AsignaciondeCursos
 
                 do
             {
-                   // String ciclo_uno = dgv_pensum.Rows[contador].Cells[3].Value.ToString();
+                    // String ciclo_uno = dgv_pensum.Rows[contador].Cells[3].Value.ToString();
+                    /*int contadorinterno = 0;
+                    int x = 0;
+                   contadorinterno = Convert.ToInt32(dgv_pensum.Rows[contador].Cells["no_ciclo"].Value);
+                    while ( x == contadorinterno)
+                    {
+                       // x = Convert.ToInt32(dgv_pensum.Rows[contador].Cells["no_ciclo"].Value);
+                        Paragraph titulo_decripcion_auto = new Paragraph(new Phrase("\n                " + dgv_pensum.Rows[x].Cells["codigo_curso"].Value.ToString().Trim() + "         " + dgv_pensum.Rows[x].Cells["nombre_curso"].Value.ToString().Trim() + "                " + dgv_pensum.Rows[x].Cells[4].Value.ToString().Trim() + "            " + dgv_pensum.Rows[x].Cells[5].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 11f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
+                        titulo_decripcion_auto.Alignment = Element.ALIGN_LEFT;
+                        DocumentoPensum.Add(titulo_decripcion_auto);
+                        x++;
+                        
+                    }*/
 
-                    switch (contador)
+
+                    int fila = contador;
+                    int x = 0;
+                    int nfila = 0;
+                    while (nfila == x)
+                    {
+                        int ci = Convert.ToInt32(dgv_pensum.Rows[fila].Cells["no_ciclo"].Value); 
+
+                        Paragraph titulo_decripcion_auto = new Paragraph(new Phrase("\n                " + dgv_pensum.Rows[nfila].Cells["codigo_curso"].Value.ToString().Trim() + "         " + dgv_pensum.Rows[fila].Cells["nombre_curso"].Value.ToString().Trim() + "                " + dgv_pensum.Rows[fila].Cells[4].Value.ToString().Trim() + "            " + dgv_pensum.Rows[fila].Cells[5].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 11f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
+                        titulo_decripcion_auto.Alignment = Element.ALIGN_LEFT;
+                        DocumentoPensum.Add(titulo_decripcion_auto);
+                        fila++;
+                        nfila = Convert.ToInt32(dgv_pensum.Rows[fila].Cells["no_ciclo"].Value);
+                    }
+
+                    /*switch (contador)
                     {
                         case 0:
                                                        
@@ -206,13 +234,11 @@ namespace AsignaciondeCursos
                             Paragraph decsem = new Paragraph(new Phrase("\nDecimo Semestre", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
                             decsem.Alignment = Element.ALIGN_LEFT;
                             DocumentoPensum.Add(decsem); break;
-                    }
+                    }*/
 
                     // Parrafo con los campos de los cursos de la carrera seleccioada
 
-                Paragraph titulo_decripcion_auto = new Paragraph(new Phrase("\n                   "+dgv_pensum.Rows[contador].Cells[2].Value.ToString().Trim()+"         "+dgv_pensum.Rows[contador].Cells[1].Value.ToString().Trim()+"                "+dgv_pensum.Rows[contador].Cells[4].Value.ToString().Trim()+"            "+dgv_pensum.Rows[contador].Cells[5].Value.ToString() , new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 11f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
-                titulo_decripcion_auto.Alignment = Element.ALIGN_LEFT;
-                DocumentoPensum.Add(titulo_decripcion_auto);
+                
                 contador++;
             }
             while (contador < dgv_pensum.Rows.Count);
@@ -273,6 +299,13 @@ namespace AsignaciondeCursos
             //dgv_pensum.Sort(dgv_pensum.Rows(1), ListSortDirection.Ascending);
             dgv_pensum.Sort(dgv_pensum.Columns["codigo_curso"], ListSortDirection.Ascending);
 
+        }
+
+        private void btn_vistaprevia_Click(object sender, EventArgs e)
+        {
+            DataTable consulta =  ClaseReportes.DatosPensum("901","2011");
+             
+            dataGridView1.DataSource = consulta ;
         }
     }
 }

@@ -44,7 +44,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.btn_vistaprevia = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pensum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -137,7 +140,7 @@
             // 
             // btn_conexion
             // 
-            this.btn_conexion.Location = new System.Drawing.Point(497, 137);
+            this.btn_conexion.Location = new System.Drawing.Point(461, 194);
             this.btn_conexion.Name = "btn_conexion";
             this.btn_conexion.Size = new System.Drawing.Size(75, 23);
             this.btn_conexion.TabIndex = 11;
@@ -152,12 +155,12 @@
             this.dgv_pensum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_pensum.Location = new System.Drawing.Point(30, 248);
             this.dgv_pensum.Name = "dgv_pensum";
-            this.dgv_pensum.Size = new System.Drawing.Size(542, 150);
+            this.dgv_pensum.Size = new System.Drawing.Size(141, 150);
             this.dgv_pensum.TabIndex = 12;
             // 
             // btn_GenerarPensumPdf
             // 
-            this.btn_GenerarPensumPdf.Location = new System.Drawing.Point(461, 77);
+            this.btn_GenerarPensumPdf.Location = new System.Drawing.Point(461, 165);
             this.btn_GenerarPensumPdf.Name = "btn_GenerarPensumPdf";
             this.btn_GenerarPensumPdf.Size = new System.Drawing.Size(75, 23);
             this.btn_GenerarPensumPdf.TabIndex = 13;
@@ -193,11 +196,31 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btn_vistaprevia
+            // 
+            this.btn_vistaprevia.Location = new System.Drawing.Point(461, 77);
+            this.btn_vistaprevia.Name = "btn_vistaprevia";
+            this.btn_vistaprevia.Size = new System.Drawing.Size(75, 23);
+            this.btn_vistaprevia.TabIndex = 17;
+            this.btn_vistaprevia.Text = "Vista Previa";
+            this.btn_vistaprevia.UseVisualStyleBackColor = true;
+            this.btn_vistaprevia.Click += new System.EventHandler(this.btn_vistaprevia_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(233, 248);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 18;
+            // 
             // form_PensumCarrera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 432);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btn_vistaprevia);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -218,6 +241,7 @@
             this.Text = "Pensum";
             this.Load += new System.EventHandler(this.form_PensumCarrera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pensum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,5 +265,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.DataGridView dgv_pensum;
+        private System.Windows.Forms.Button btn_vistaprevia;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClaseReportes.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Form_Administrativo.cs">
       <SubType>Form</SubType>
