@@ -43,6 +43,7 @@
             this.btn_GenerarPensumPdf = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pensum)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,6 +147,8 @@
             // 
             // dgv_pensum
             // 
+            this.dgv_pensum.AllowUserToAddRows = false;
+            this.dgv_pensum.AllowUserToDeleteRows = false;
             this.dgv_pensum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_pensum.Location = new System.Drawing.Point(30, 248);
             this.dgv_pensum.Name = "dgv_pensum";
@@ -180,11 +183,22 @@
             this.textBox1.Size = new System.Drawing.Size(100, 98);
             this.textBox1.TabIndex = 15;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(81, 94);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // form_PensumCarrera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 432);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_GenerarPensumPdf);
@@ -222,9 +236,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbo_facultad;
         private System.Windows.Forms.Button btn_conexion;
-        private System.Windows.Forms.DataGridView dgv_pensum;
         private System.Windows.Forms.Button btn_GenerarPensumPdf;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.DataGridView dgv_pensum;
     }
 }
