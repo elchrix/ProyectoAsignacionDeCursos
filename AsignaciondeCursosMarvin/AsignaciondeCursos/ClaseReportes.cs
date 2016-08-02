@@ -26,12 +26,12 @@ namespace AsignaciondeCursos
                 return dt;
             }
 
-        public static DataTable DatosPensum(String id_carrera, String anio_pensum)
+        public static DataTable DatosPensum(String id_carrera, String anio_pensum,String ciclo)
         {
             MySqlConnection con = Conexion.ObtenerConexion();
 
             DataTable dt = new DataTable();
-            string query = "select id_carrera,nombre_curso,codigo_curso,no_ciclo,no_creditos,prerrequisitos from Curso where id_carrera='" + id_carrera + "'and anio_pensum='" + anio_pensum + "'";
+            string query = "select id_carrera,nombre_curso,codigo_curso,no_ciclo,no_creditos,prerrequisitos from Curso where id_carrera='" + id_carrera + "'and anio_pensum='" + anio_pensum + "' and no_ciclo = '" + ciclo +"'";
             MySqlCommand comando = new MySqlCommand(query, con);
             MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
             adaptador.Fill(dt);

@@ -117,7 +117,7 @@ namespace AsignaciondeCursos
         private void btn_GenerarPensumPdf_Click(object sender, EventArgs e)
         {
             
-            int contador = 0;
+           /* int contador = 0;
             int recorre = 0;
             String facultad ;
             dgv_pensum.Sort(dgv_pensum.Columns["codigo_curso"], ListSortDirection.Ascending);
@@ -165,7 +165,7 @@ namespace AsignaciondeCursos
                         DocumentoPensum.Add(titulo_decripcion_auto);
                         x++;
                         
-                    }*/
+                    }
 
 
                     int fila = contador;
@@ -234,7 +234,7 @@ namespace AsignaciondeCursos
                             Paragraph decsem = new Paragraph(new Phrase("\nDecimo Semestre", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
                             decsem.Alignment = Element.ALIGN_LEFT;
                             DocumentoPensum.Add(decsem); break;
-                    }*/
+                    }
 
                     // Parrafo con los campos de los cursos de la carrera seleccioada
 
@@ -252,7 +252,7 @@ namespace AsignaciondeCursos
                         proceso.Kill();
                     }
 
-                }*/
+                }
 
                 System.Diagnostics.Process.Start(ruta + "pensum.pdf"); // el documento PDF se ejecuta automaticamente para que no se haga el doble cli
             }
@@ -262,7 +262,7 @@ namespace AsignaciondeCursos
                
                
 
-            }
+            }*/
         }
 
 
@@ -303,9 +303,112 @@ namespace AsignaciondeCursos
 
         private void btn_vistaprevia_Click(object sender, EventArgs e)
         {
-            DataTable consulta =  ClaseReportes.DatosPensum("901","2011");
-             
+            String ruta = "";
+            ruta = @"C:\Users\Marvin\Documents\PensumsGenerados";
+
+            Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta + "pensum.pdf", FileMode.Create));
+            DocumentoPensum.Open();
+            // ---------------------- la hoja de de PDF tiene un ancho de 600 
+            //------------------------ LOGO UMG 
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("logo2.jpg");
+            logo.SetAbsolutePosition(30f, 650f);
+            //logo.Alignment = Element.ALIGN_LEFT;
+            logo.ScaleAbsoluteHeight(125);
+            logo.ScaleAbsoluteWidth(125);
+
+            DocumentoPensum.Add(logo);
+
+            // Formatos del Pdf
+            iTextSharp.text.Font formatocuerpo = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
+
+
+
+            // Encabezado umg
+            Paragraph encabezado = new Paragraph(new Phrase("\nUniversidad Complutense de Madrid\n" + cbo_facultad.Text + "\n" + cbo_carrera.Text + "\nPensum " + cbo_pensum.Text, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
+            encabezado.Alignment = Element.ALIGN_CENTER;
+            DocumentoPensum.Add(encabezado);
+
+            Paragraph titulos = new Paragraph(new Phrase("\n\n\n\n       Código       Curso           Créditos        Requisitos", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+            titulos.Alignment = Element.ALIGN_CENTER;
+            DocumentoPensum.Add(titulos);
+
+
+            DataTable consulta =  ClaseReportes.DatosPensum(id_carrera,anio_pensum,"1");
             dataGridView1.DataSource = consulta ;
+
+            //dgv_pensum.Rows.Count
+
+            for (int control = 0; control < dataGridView1.Rows.Count-1; control++)
+            {
+                Paragraph ciclouno = new Paragraph(new Phrase(dataGridView1.Rows[control].Cells[0].Value.ToString() + dataGridView1.Rows[control].Cells[1].Value.ToString(), formatocuerpo));
+                
+                ciclouno.Alignment = Element.ALIGN_LEFT;
+                DocumentoPensum.Add(ciclouno);
+            }
+
+
+
+            /*for (int fila = 0; fila < dataGridView1.RowCount; fila++)
+            {
+
+                for (int colum = 0; colum < dataGridView1.ColumnCount; fila++)
+                {
+                    //Paragraph ciclouno =new Paragraph( new Phrase(dataGridView1[colum, fila].Value.ToString(), formatocuerpo));
+                    Paragraph ciclouno = new Paragraph(new Phrase("\n  PRUEBA  \n " + dataGridView1[colum,fila].Value.ToString() , new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 11f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
+                    ciclouno.Alignment = Element.ALIGN_LEFT;
+                    DocumentoPensum.Add(ciclouno);
+
+                    DocumentoPensum.Add(ciclouno);
+
+                }
+            }*/
+
+
+            /* Paragraph titulo_decripcion_auto = new Paragraph(new Phrase("\n  PRUEBA  \n " + dataGridView1. , new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 11f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
+             titulo_decripcion_auto.Alignment = Element.ALIGN_LEFT;
+             DocumentoPensum.Add(titulo_decripcion_auto);*/
+
+            DocumentoPensum.Close(); // se cierra el documento una ves realizados los cambios
+
+                       System.Diagnostics.Process.Start(ruta + "pensum.pdf"); // el documento PDF se ejecuta automaticamente para que no se haga el doble cli
         }
+
+        /*private void btn_vistaprevia_Click_1(object sender, EventArgs e)
+        {
+            String ruta = "";
+            ruta = @"C:\Users\Marvin\Documents\PensumsGenerados";
+
+            Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta + "pensum.pdf", FileMode.Create));
+            DocumentoPensum.Open();
+            // ---------------------- la hoja de de PDF tiene un ancho de 600 
+            //------------------------ LOGO UMG 
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("logo2.jpg");
+            logo.SetAbsolutePosition(30f, 650f);
+            //logo.Alignment = Element.ALIGN_LEFT;
+            logo.ScaleAbsoluteHeight(125);
+            logo.ScaleAbsoluteWidth(125);
+
+            DocumentoPensum.Add(logo);
+
+            // Formatos del Pdf
+            iTextSharp.text.Font formatocuerpo = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
+
+
+
+            // Encabezado umg
+            Paragraph encabezado = new Paragraph(new Phrase("\nUniversidad Complutense de Madrid\n" + cbo_facultad.Text + "\n" + cbo_carrera.Text + "\nPensum " + cbo_pensum.Text, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
+            encabezado.Alignment = Element.ALIGN_CENTER;
+            DocumentoPensum.Add(encabezado);
+
+            Paragraph titulos = new Paragraph(new Phrase("\n\n\n\n       Código       Curso           Créditos        Requisitos", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+            titulos.Alignment = Element.ALIGN_CENTER;
+            DocumentoPensum.Add(titulos);
+
+            // CREARPDF LLAMAR FUNCION
+
+            System.Diagnostics.Process.Start(ruta + "pensum.pdf");
+        }*/
     }
 }

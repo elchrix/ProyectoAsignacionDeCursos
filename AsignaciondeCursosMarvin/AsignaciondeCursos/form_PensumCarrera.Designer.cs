@@ -140,7 +140,7 @@
             // 
             // btn_conexion
             // 
-            this.btn_conexion.Location = new System.Drawing.Point(461, 194);
+            this.btn_conexion.Location = new System.Drawing.Point(254, 184);
             this.btn_conexion.Name = "btn_conexion";
             this.btn_conexion.Size = new System.Drawing.Size(75, 23);
             this.btn_conexion.TabIndex = 11;
@@ -160,7 +160,7 @@
             // 
             // btn_GenerarPensumPdf
             // 
-            this.btn_GenerarPensumPdf.Location = new System.Drawing.Point(461, 165);
+            this.btn_GenerarPensumPdf.Location = new System.Drawing.Point(254, 149);
             this.btn_GenerarPensumPdf.Name = "btn_GenerarPensumPdf";
             this.btn_GenerarPensumPdf.Size = new System.Drawing.Size(75, 23);
             this.btn_GenerarPensumPdf.TabIndex = 13;
@@ -198,11 +198,11 @@
             // 
             // btn_vistaprevia
             // 
-            this.btn_vistaprevia.Location = new System.Drawing.Point(461, 77);
+            this.btn_vistaprevia.Location = new System.Drawing.Point(254, 117);
             this.btn_vistaprevia.Name = "btn_vistaprevia";
             this.btn_vistaprevia.Size = new System.Drawing.Size(75, 23);
             this.btn_vistaprevia.TabIndex = 17;
-            this.btn_vistaprevia.Text = "Vista Previa";
+            this.btn_vistaprevia.Text = "Vista ";
             this.btn_vistaprevia.UseVisualStyleBackColor = true;
             this.btn_vistaprevia.Click += new System.EventHandler(this.btn_vistaprevia_Click);
             // 
