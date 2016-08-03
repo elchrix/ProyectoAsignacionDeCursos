@@ -45,9 +45,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_vistaprevia = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_muestra = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pensum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_muestra)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -198,7 +198,7 @@
             // 
             // btn_vistaprevia
             // 
-            this.btn_vistaprevia.Location = new System.Drawing.Point(254, 117);
+            this.btn_vistaprevia.Location = new System.Drawing.Point(475, 68);
             this.btn_vistaprevia.Name = "btn_vistaprevia";
             this.btn_vistaprevia.Size = new System.Drawing.Size(75, 23);
             this.btn_vistaprevia.TabIndex = 17;
@@ -206,20 +206,21 @@
             this.btn_vistaprevia.UseVisualStyleBackColor = true;
             this.btn_vistaprevia.Click += new System.EventHandler(this.btn_vistaprevia_Click);
             // 
-            // dataGridView1
+            // dgv_muestra
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(233, 248);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 18;
+            this.dgv_muestra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_muestra.Location = new System.Drawing.Point(233, 248);
+            this.dgv_muestra.Name = "dgv_muestra";
+            this.dgv_muestra.Size = new System.Drawing.Size(317, 150);
+            this.dgv_muestra.TabIndex = 18;
+            this.dgv_muestra.Visible = false;
             // 
             // form_PensumCarrera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 432);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_muestra);
             this.Controls.Add(this.btn_vistaprevia);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -241,7 +242,7 @@
             this.Text = "Pensum";
             this.Load += new System.EventHandler(this.form_PensumCarrera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pensum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_muestra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,6 +267,6 @@
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.DataGridView dgv_pensum;
         private System.Windows.Forms.Button btn_vistaprevia;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_muestra;
     }
 }

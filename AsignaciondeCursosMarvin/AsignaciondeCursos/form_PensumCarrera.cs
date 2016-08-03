@@ -303,75 +303,143 @@ namespace AsignaciondeCursos
 
         private void btn_vistaprevia_Click(object sender, EventArgs e)
         {
-            String ruta = "";
-            ruta = @"C:\Users\Marvin\Documents\PensumsGenerados";
-
-            Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-            PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta + "pensum.pdf", FileMode.Create));
-            DocumentoPensum.Open();
-            // ---------------------- la hoja de de PDF tiene un ancho de 600 
-            //------------------------ LOGO UMG 
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("logo2.jpg");
-            logo.SetAbsolutePosition(30f, 650f);
-            //logo.Alignment = Element.ALIGN_LEFT;
-            logo.ScaleAbsoluteHeight(125);
-            logo.ScaleAbsoluteWidth(125);
-
-            DocumentoPensum.Add(logo);
-
-            // Formatos del Pdf
-            iTextSharp.text.Font formatocuerpo = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
-
-
-
-            // Encabezado umg
-            Paragraph encabezado = new Paragraph(new Phrase("\nUniversidad Complutense de Madrid\n" + cbo_facultad.Text + "\n" + cbo_carrera.Text + "\nPensum " + cbo_pensum.Text, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
-            encabezado.Alignment = Element.ALIGN_CENTER;
-            DocumentoPensum.Add(encabezado);
-
-            Paragraph titulos = new Paragraph(new Phrase("\n\n\n\n       Código       Curso           Créditos        Requisitos", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
-            titulos.Alignment = Element.ALIGN_CENTER;
-            DocumentoPensum.Add(titulos);
-
-
-            DataTable consulta =  ClaseReportes.DatosPensum(id_carrera,anio_pensum,"1");
-            dataGridView1.DataSource = consulta ;
-
-            //dgv_pensum.Rows.Count
-
-            for (int control = 0; control < dataGridView1.Rows.Count-1; control++)
+            try
             {
-                Paragraph ciclouno = new Paragraph(new Phrase(dataGridView1.Rows[control].Cells[0].Value.ToString() + dataGridView1.Rows[control].Cells[1].Value.ToString(), formatocuerpo));
+                String ruta = "";
+                ruta = @"C:\Users\Marvin\Documents\PensumsGenerados";
+
+                Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+                PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta + "pensum.pdf", FileMode.Create));
+                DocumentoPensum.Open();
+                // ---------------------- la hoja de de PDF tiene un ancho de 600 
+                //------------------------ LOGO UNIVERSIDAD 
+                iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("logo2.jpg");
+                logo.SetAbsolutePosition(30f, 650f);
+                //logo.Alignment = Element.ALIGN_LEFT;
+                logo.ScaleAbsoluteHeight(125);
+                logo.ScaleAbsoluteWidth(125);
+
+                DocumentoPensum.Add(logo);
+
+                // Formatos del Pdf
+                iTextSharp.text.Font formatotitulos = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
+                iTextSharp.text.Font formatocuerpo = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
+
+
+
+                // Encabezado umg
+                Paragraph encabezado = new Paragraph(new Phrase("\nUniversidad Complutense de Madrid\n" + cbo_facultad.Text + "\n" + cbo_carrera.Text + "\nPensum " + cbo_pensum.Text, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
+                encabezado.Alignment = Element.ALIGN_CENTER;
+                DocumentoPensum.Add(encabezado);
+
+                Paragraph titulos = new Paragraph(new Phrase("\n\n\n\n       Código       Curso           Créditos        Requisitos", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+                titulos.Alignment = Element.ALIGN_CENTER;
+                DocumentoPensum.Add(titulos);
+
+                // ------------------------ INICIO DE LA TOMA DE DATOS DE LA BASE DE DATOS Y ENVIARLOS AL PDF SEGUN PETICION DEL ESTUDIANTE
+                // DEFINICION DE VARIABLES PARA ENVIAR DATOS AL PDF DE PENSUM
                 
-                ciclouno.Alignment = Element.ALIGN_LEFT;
-                DocumentoPensum.Add(ciclouno);
+                for (int num_semestre = 1; num_semestre <= 12; num_semestre++)
+                { 
+                    string nuevo_num_semestre = num_semestre.ToString();// DEFINICION DE VARIABLES PARA ENVIAR DATOS AL PDF DE PENSUM
+                    DataTable consulta = null;
+                    consulta = ClaseReportes.DatosPensum(id_carrera, anio_pensum, nuevo_num_semestre);
+                    dgv_muestra.DataSource = consulta;
+                    Phrase semestre = null;
+
+                    switch (num_semestre) // EL SWITCH VA A DETERMINAR CUANDO VA A COLOCAR UNA ETIQUETA DE NUMERO DE SEMESTRE
+                    {
+                        case 1:
+                        
+                        semestre = new Phrase("\nPRIMER SEMESTRE", formatotitulos);
+                        DocumentoPensum.Add(semestre);break;
+
+                        case 2:
+                        semestre = null;
+                        semestre = new Phrase("\nSEGUNDO SEMESTRE", formatotitulos);
+                        DocumentoPensum.Add(semestre); break;
+
+                        case 3:
+                        semestre = null;
+                        semestre = new Phrase("\nTERCER SEMESTRE", formatotitulos);
+                        DocumentoPensum.Add(semestre); break;
+
+                        case 4:
+                            semestre = null;
+                            semestre = new Phrase("\nCUARTO SEMESTRE", formatotitulos);
+                            DocumentoPensum.Add(semestre); break;
+
+                        case 5:
+                            semestre = null;
+                            semestre = new Phrase("\nQUINTO SEMESTRE", formatotitulos);
+                            DocumentoPensum.Add(semestre); break;
+
+                        case 6:
+                            semestre = null;
+                            semestre = new Phrase("\nSEXTO SEMESTRE", formatotitulos);
+                            DocumentoPensum.Add(semestre); break;
+
+                        case 7:
+                            semestre = null;
+                            semestre = new Phrase("\nSEPTIMO SEMESTRE", formatotitulos);
+                            DocumentoPensum.Add(semestre); break;
+
+                        case 8:
+                            semestre = null;
+                            semestre = new Phrase("\nOCTAVO SEMESTRE", formatotitulos);
+                            DocumentoPensum.Add(semestre); break;
+
+                        case 9:
+                            
+                            semestre = new Phrase("\nNOVENO SEMESTRE", formatotitulos);
+                            DocumentoPensum.Add(semestre); break;
+
+                        case 10:
+                            semestre = null;
+                            semestre = new Phrase("\nDECIMO SEMESTRE", formatotitulos);
+                            DocumentoPensum.Add(semestre); break;
+
+                        case 11:
+                            
+                            if (consulta != null)
+                            {
+                                semestre = null;
+                                semestre = new Phrase("\nONCEAVO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre);
+                            }break;                      
+                                
+                            
+
+                        case 12:
+                            semestre = null;
+                            semestre = new Phrase("\nDOCEAVO SEMESTRE", formatotitulos);
+                            DocumentoPensum.Add(semestre); break;
+                    }
+
+                    //if (num_semestre <=  8)
+                    
+                        for (int control = 0; control < dgv_muestra.Rows.Count - 1; control++)// CICLO FOR QUE VA A RECORRER EL DATA GRIED PARA LEER LOS DATOS Y ENVIARLOS AL PDF, SE VAN A LIMPIAR LAS VARIABLES EN CADA CICLO PARA REUTILIZARLAS
+                        {
+                            Paragraph ciclouno = new Paragraph(new Phrase("\n              " + dgv_muestra.Rows[control].Cells["codigo_curso"].Value.ToString() + "      " + dgv_muestra.Rows[control].Cells["nombre_curso"].Value.ToString() + "         " + dgv_muestra.Rows[control].Cells["no_creditos"].Value.ToString() + "              " + dgv_muestra.Rows[control].Cells["prerrequisitos"].Value.ToString(), formatocuerpo));
+                            ciclouno.Alignment = Element.ALIGN_LEFT;
+                            DocumentoPensum.Add(ciclouno);
+
+                        }
+                        dgv_muestra.DataSource = "";
+                        consulta = null;
+                    
+                                        }
+
+
+                
+                DocumentoPensum.Close(); // se cierra el documento una ves realizados los cambios
+
+                System.Diagnostics.Process.Start(ruta + "pensum.pdf"); // el documento PDF se ejecuta automaticamente para que no se haga el doble cli
             }
-
-
-
-            /*for (int fila = 0; fila < dataGridView1.RowCount; fila++)
+            catch (Exception ex)
             {
-
-                for (int colum = 0; colum < dataGridView1.ColumnCount; fila++)
-                {
-                    //Paragraph ciclouno =new Paragraph( new Phrase(dataGridView1[colum, fila].Value.ToString(), formatocuerpo));
-                    Paragraph ciclouno = new Paragraph(new Phrase("\n  PRUEBA  \n " + dataGridView1[colum,fila].Value.ToString() , new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 11f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
-                    ciclouno.Alignment = Element.ALIGN_LEFT;
-                    DocumentoPensum.Add(ciclouno);
-
-                    DocumentoPensum.Add(ciclouno);
-
-                }
-            }*/
-
-
-            /* Paragraph titulo_decripcion_auto = new Paragraph(new Phrase("\n  PRUEBA  \n " + dataGridView1. , new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 11f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
-             titulo_decripcion_auto.Alignment = Element.ALIGN_LEFT;
-             DocumentoPensum.Add(titulo_decripcion_auto);*/
-
-            DocumentoPensum.Close(); // se cierra el documento una ves realizados los cambios
-
-                       System.Diagnostics.Process.Start(ruta + "pensum.pdf"); // el documento PDF se ejecuta automaticamente para que no se haga el doble cli
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /*private void btn_vistaprevia_Click_1(object sender, EventArgs e)
