@@ -78,5 +78,18 @@ namespace AsignaciondeCursos
             this.spc_principal.Panel2.Tag = f;
             f.Show();
         }
+
+        private void llbl_alumnos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (this.spc_principal.Panel2.Controls.Count > 0)
+                this.spc_principal.Panel2.Controls.RemoveAt(0);
+            form_ListadoAlumno f = new form_ListadoAlumno();
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+            this.spc_principal.Panel2.Controls.Add(f);
+            this.spc_principal.Panel2.Tag = f;
+            f.Show();
+        }
     }
 }

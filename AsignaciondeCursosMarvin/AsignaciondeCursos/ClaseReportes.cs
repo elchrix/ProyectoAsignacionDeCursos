@@ -12,13 +12,14 @@ namespace AsignaciondeCursos
     {
         
 
-            public static DataTable ObtenerCursosAprobados(String id_carrera, String anio_ingreso, String no_carne)
+            public static DataTable DatosAlumnoPorCarrea(String id_carrera)
             {
                 MySqlConnection con = Conexion.ObtenerConexion();
 
                 DataTable dt = new DataTable();
-                string query = "select id_carrera, codigo_curso" +
-                    " from Cursos_recibidos where id_carrera = '" + id_carrera + "' and anio_ingreso = '" + anio_ingreso + "' and no_carne = '" + no_carne + "' and  nota = 'aprobado'";
+            //string query = "select id_carrera, codigo_curso" +
+            //" from Cursos_recibidos where id_carrera = '" + id_carrera + "' and anio_ingreso = '" + anio_ingreso + "' and no_carne = '" + no_carne + "' and  nota = 'aprobado'";
+                string query = "select * from alumno where id_carrera="+id_carrera;
                 MySqlCommand comando = new MySqlCommand(query, con);
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
                 adaptador.Fill(dt);

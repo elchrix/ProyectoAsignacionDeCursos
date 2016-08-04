@@ -33,7 +33,7 @@
             this.btn_MenuReportes = new System.Windows.Forms.Button();
             this.llbl_pensum = new System.Windows.Forms.LinkLabel();
             this.linkLabel14 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel11 = new System.Windows.Forms.LinkLabel();
+            this.llbl_alumnos = new System.Windows.Forms.LinkLabel();
             this.linkLabel13 = new System.Windows.Forms.LinkLabel();
             this.linkLabel12 = new System.Windows.Forms.LinkLabel();
             this.spc_ingresos = new System.Windows.Forms.SplitContainer();
@@ -95,7 +95,7 @@
             // 
             this.spc_reportes.Panel2.Controls.Add(this.llbl_pensum);
             this.spc_reportes.Panel2.Controls.Add(this.linkLabel14);
-            this.spc_reportes.Panel2.Controls.Add(this.linkLabel11);
+            this.spc_reportes.Panel2.Controls.Add(this.llbl_alumnos);
             this.spc_reportes.Panel2.Controls.Add(this.linkLabel13);
             this.spc_reportes.Panel2.Controls.Add(this.linkLabel12);
             this.spc_reportes.Size = new System.Drawing.Size(207, 178);
@@ -134,15 +134,16 @@
             this.linkLabel14.TabStop = true;
             this.linkLabel14.Text = "linkLabel14";
             // 
-            // linkLabel11
+            // llbl_alumnos
             // 
-            this.linkLabel11.AutoSize = true;
-            this.linkLabel11.Location = new System.Drawing.Point(68, 32);
-            this.linkLabel11.Name = "linkLabel11";
-            this.linkLabel11.Size = new System.Drawing.Size(61, 13);
-            this.linkLabel11.TabIndex = 8;
-            this.linkLabel11.TabStop = true;
-            this.linkLabel11.Text = "linkLabel11";
+            this.llbl_alumnos.AutoSize = true;
+            this.llbl_alumnos.Location = new System.Drawing.Point(68, 32);
+            this.llbl_alumnos.Name = "llbl_alumnos";
+            this.llbl_alumnos.Size = new System.Drawing.Size(47, 13);
+            this.llbl_alumnos.TabIndex = 8;
+            this.llbl_alumnos.TabStop = true;
+            this.llbl_alumnos.Text = "Alumnos";
+            this.llbl_alumnos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_alumnos_LinkClicked);
             // 
             // linkLabel13
             // 
@@ -357,7 +358,7 @@
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.LinkLabel llbl_pensum;
         private System.Windows.Forms.LinkLabel linkLabel14;
-        private System.Windows.Forms.LinkLabel linkLabel11;
+        private System.Windows.Forms.LinkLabel llbl_alumnos;
         private System.Windows.Forms.LinkLabel linkLabel13;
         private System.Windows.Forms.LinkLabel linkLabel12;
         private System.Windows.Forms.LinkLabel linkLabel8;
