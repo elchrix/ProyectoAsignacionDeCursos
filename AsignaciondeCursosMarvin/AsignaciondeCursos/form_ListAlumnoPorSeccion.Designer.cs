@@ -37,17 +37,19 @@
             this.cbo_carrera = new System.Windows.Forms.ComboBox();
             this.cbo_seccion = new System.Windows.Forms.ComboBox();
             this.cbo_curso = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dgv_muestra = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rdb_ListaPorCarrera = new System.Windows.Forms.RadioButton();
+            this.rdb_ListaPorCurso = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_muestra)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 82);
+            this.label1.Location = new System.Drawing.Point(247, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 0;
@@ -56,7 +58,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 150);
+            this.label2.Location = new System.Drawing.Point(437, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 1;
@@ -65,7 +67,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(340, 82);
+            this.label3.Location = new System.Drawing.Point(439, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(340, 150);
+            this.label4.Location = new System.Drawing.Point(249, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 3;
@@ -82,9 +84,9 @@
             // 
             // btn_GenerarLista
             // 
-            this.btn_GenerarLista.Location = new System.Drawing.Point(90, 205);
+            this.btn_GenerarLista.Location = new System.Drawing.Point(245, 250);
             this.btn_GenerarLista.Name = "btn_GenerarLista";
-            this.btn_GenerarLista.Size = new System.Drawing.Size(175, 114);
+            this.btn_GenerarLista.Size = new System.Drawing.Size(139, 83);
             this.btn_GenerarLista.TabIndex = 8;
             this.btn_GenerarLista.Text = "Vista Previa";
             this.btn_GenerarLista.UseVisualStyleBackColor = true;
@@ -93,17 +95,16 @@
             // cbo_facultad
             // 
             this.cbo_facultad.FormattingEnabled = true;
-            this.cbo_facultad.Location = new System.Drawing.Point(142, 74);
+            this.cbo_facultad.Location = new System.Drawing.Point(301, 52);
             this.cbo_facultad.Name = "cbo_facultad";
             this.cbo_facultad.Size = new System.Drawing.Size(121, 21);
             this.cbo_facultad.TabIndex = 9;
-            this.cbo_facultad.Text = "Seleccione una opcion";
             this.cbo_facultad.SelectedIndexChanged += new System.EventHandler(this.cbo_facultad_SelectedIndexChanged);
             // 
             // cbo_carrera
             // 
             this.cbo_carrera.FormattingEnabled = true;
-            this.cbo_carrera.Location = new System.Drawing.Point(393, 74);
+            this.cbo_carrera.Location = new System.Drawing.Point(492, 52);
             this.cbo_carrera.Name = "cbo_carrera";
             this.cbo_carrera.Size = new System.Drawing.Size(121, 21);
             this.cbo_carrera.TabIndex = 10;
@@ -112,7 +113,7 @@
             // cbo_seccion
             // 
             this.cbo_seccion.FormattingEnabled = true;
-            this.cbo_seccion.Location = new System.Drawing.Point(142, 142);
+            this.cbo_seccion.Location = new System.Drawing.Point(492, 99);
             this.cbo_seccion.Name = "cbo_seccion";
             this.cbo_seccion.Size = new System.Drawing.Size(121, 21);
             this.cbo_seccion.TabIndex = 11;
@@ -120,52 +121,70 @@
             // cbo_curso
             // 
             this.cbo_curso.FormattingEnabled = true;
-            this.cbo_curso.Location = new System.Drawing.Point(393, 142);
+            this.cbo_curso.Location = new System.Drawing.Point(301, 99);
             this.cbo_curso.Name = "cbo_curso";
             this.cbo_curso.Size = new System.Drawing.Size(121, 21);
             this.cbo_curso.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(273, 229);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "label5";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(328, 226);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 14;
+            this.cbo_curso.SelectedIndexChanged += new System.EventHandler(this.cbo_curso_SelectedIndexChanged);
             // 
             // dgv_muestra
             // 
             this.dgv_muestra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_muestra.Location = new System.Drawing.Point(12, 325);
+            this.dgv_muestra.Location = new System.Drawing.Point(12, 366);
             this.dgv_muestra.Name = "dgv_muestra";
-            this.dgv_muestra.Size = new System.Drawing.Size(606, 150);
+            this.dgv_muestra.Size = new System.Drawing.Size(606, 101);
             this.dgv_muestra.TabIndex = 15;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(471, 265);
+            this.textBox1.Location = new System.Drawing.Point(53, 288);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 16;
+            // 
+            // rdb_ListaPorCarrera
+            // 
+            this.rdb_ListaPorCarrera.AutoSize = true;
+            this.rdb_ListaPorCarrera.Location = new System.Drawing.Point(28, 35);
+            this.rdb_ListaPorCarrera.Name = "rdb_ListaPorCarrera";
+            this.rdb_ListaPorCarrera.Size = new System.Drawing.Size(158, 17);
+            this.rdb_ListaPorCarrera.TabIndex = 17;
+            this.rdb_ListaPorCarrera.TabStop = true;
+            this.rdb_ListaPorCarrera.Text = "Lista de alumnos por carrera";
+            this.rdb_ListaPorCarrera.UseVisualStyleBackColor = true;
+            this.rdb_ListaPorCarrera.CheckedChanged += new System.EventHandler(this.rdb_ListaPorCarrera_CheckedChanged);
+            // 
+            // rdb_ListaPorCurso
+            // 
+            this.rdb_ListaPorCurso.AutoSize = true;
+            this.rdb_ListaPorCurso.Location = new System.Drawing.Point(28, 58);
+            this.rdb_ListaPorCurso.Name = "rdb_ListaPorCurso";
+            this.rdb_ListaPorCurso.Size = new System.Drawing.Size(151, 17);
+            this.rdb_ListaPorCurso.TabIndex = 18;
+            this.rdb_ListaPorCurso.TabStop = true;
+            this.rdb_ListaPorCurso.Text = "Lista de alumnos por curso";
+            this.rdb_ListaPorCurso.UseVisualStyleBackColor = true;
+            this.rdb_ListaPorCurso.CheckedChanged += new System.EventHandler(this.rdb_ListaPorCurso_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdb_ListaPorCurso);
+            this.groupBox1.Controls.Add(this.rdb_ListaPorCarrera);
+            this.groupBox1.Location = new System.Drawing.Point(30, 45);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 98);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Opciones";
             // 
             // form_ListadoAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 479);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgv_muestra);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.cbo_curso);
             this.Controls.Add(this.cbo_seccion);
             this.Controls.Add(this.cbo_carrera);
@@ -179,6 +198,8 @@
             this.Text = "Listado de Alumnos";
             this.Load += new System.EventHandler(this.form_ListadoAlumno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_muestra)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,9 +216,10 @@
         private System.Windows.Forms.ComboBox cbo_carrera;
         private System.Windows.Forms.ComboBox cbo_seccion;
         private System.Windows.Forms.ComboBox cbo_curso;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dgv_muestra;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rdb_ListaPorCarrera;
+        private System.Windows.Forms.RadioButton rdb_ListaPorCurso;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
