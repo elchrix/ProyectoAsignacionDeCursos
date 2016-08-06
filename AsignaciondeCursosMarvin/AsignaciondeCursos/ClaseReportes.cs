@@ -40,6 +40,31 @@ namespace AsignaciondeCursos
             return dt;
         }
 
+        public static DataTable DatosAlumnosPorCurso(String no_curso)// seleccion de alumnos por curso
+        {
+            MySqlConnection con = Conexion.ObtenerConexion();
+            DataTable dat = new DataTable();
+            String query = "select distinct al.id_carrera, al.anio_ingreso, al.no_carne, al.primer_nombre, al.segundo_nombre,al.primer_apellido, al.segundo_apellido,cu.nombre_curso, cr.seccion, cr.no_salon from alumno as al inner join cursos_recibidos as cr on ( al.id_carrera = cr.id_carrera)inner join curso as cu on(cr.id_carrera = cu.id_carrera) where cu.codigo_curso ='" +no_curso+"'";
+            MySqlCommand comando = new MySqlCommand(query, con);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+            adaptador.Fill(dat);
+            con.Close();
+            return dat;
+        }
+
+        public static DataTable DatosAlumnosPorSeccion(String seccion, String codigo_curso)// seleccion de alumnos por seccion segun curso
+        {
+            MySqlConnection con = Conexion.ObtenerConexion();
+            DataTable dat = new DataTable();
+            String query = "select distinct al.id_carrera, al.anio_ingreso, al.no_carne, al.primer_nombre, al.segundo_nombre,al.primer_apellido, al.segundo_apellido,cu.nombre_curso, cr.seccion, cr.no_salon from alumno as al inner join cursos_recibidos as cr on ( al.id_carrera = cr.id_carrera)inner join curso as cu on(cr.id_carrera = cu.id_carrera) where cr.seccion ='" + seccion + "' and cu.codigo_curso='"+codigo_curso+"'";
+            MySqlCommand comando = new MySqlCommand(query, con);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+            adaptador.Fill(dat);
+            con.Close();
+            return dat;
+        }
+
+
 
     }
 }

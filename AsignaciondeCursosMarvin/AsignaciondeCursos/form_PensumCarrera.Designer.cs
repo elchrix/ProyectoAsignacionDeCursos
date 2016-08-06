@@ -45,7 +45,7 @@
             // 
             this.cbo_carrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_carrera.FormattingEnabled = true;
-            this.cbo_carrera.Location = new System.Drawing.Point(275, 145);
+            this.cbo_carrera.Location = new System.Drawing.Point(270, 112);
             this.cbo_carrera.Name = "cbo_carrera";
             this.cbo_carrera.Size = new System.Drawing.Size(127, 21);
             this.cbo_carrera.TabIndex = 2;
@@ -55,7 +55,7 @@
             // 
             this.cbo_pensum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_pensum.FormattingEnabled = true;
-            this.cbo_pensum.Location = new System.Drawing.Point(473, 145);
+            this.cbo_pensum.Location = new System.Drawing.Point(468, 112);
             this.cbo_pensum.Name = "cbo_pensum";
             this.cbo_pensum.Size = new System.Drawing.Size(81, 21);
             this.cbo_pensum.TabIndex = 3;
@@ -64,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 153);
+            this.label1.Location = new System.Drawing.Point(20, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 5;
@@ -73,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 153);
+            this.label2.Location = new System.Drawing.Point(223, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 6;
@@ -82,7 +82,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(422, 153);
+            this.label3.Location = new System.Drawing.Point(417, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 7;
@@ -92,7 +92,7 @@
             // 
             this.cbo_facultad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_facultad.FormattingEnabled = true;
-            this.cbo_facultad.Location = new System.Drawing.Point(79, 145);
+            this.cbo_facultad.Location = new System.Drawing.Point(74, 112);
             this.cbo_facultad.Name = "cbo_facultad";
             this.cbo_facultad.Size = new System.Drawing.Size(129, 21);
             this.cbo_facultad.TabIndex = 1;
@@ -111,9 +111,9 @@
             // 
             // btn_vistaprevia
             // 
-            this.btn_vistaprevia.Location = new System.Drawing.Point(231, 242);
+            this.btn_vistaprevia.Location = new System.Drawing.Point(240, 180);
             this.btn_vistaprevia.Name = "btn_vistaprevia";
-            this.btn_vistaprevia.Size = new System.Drawing.Size(158, 93);
+            this.btn_vistaprevia.Size = new System.Drawing.Size(98, 50);
             this.btn_vistaprevia.TabIndex = 17;
             this.btn_vistaprevia.Text = "Vista Previa";
             this.btn_vistaprevia.UseVisualStyleBackColor = true;
@@ -122,9 +122,9 @@
             // dgv_muestra
             // 
             this.dgv_muestra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_muestra.Location = new System.Drawing.Point(566, 365);
+            this.dgv_muestra.Location = new System.Drawing.Point(23, 252);
             this.dgv_muestra.Name = "dgv_muestra";
-            this.dgv_muestra.Size = new System.Drawing.Size(10, 10);
+            this.dgv_muestra.Size = new System.Drawing.Size(526, 123);
             this.dgv_muestra.TabIndex = 18;
             this.dgv_muestra.Visible = false;
             // 
@@ -132,7 +132,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(147, 40);
+            this.label4.Location = new System.Drawing.Point(129, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(359, 37);
             this.label4.TabIndex = 19;

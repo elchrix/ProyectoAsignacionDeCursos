@@ -39,7 +39,7 @@ namespace AsignaciondeCursos
             DataTable cargadt = new DataTable();
 
             //MySqlCommand cmd = new MySqlCommand("select nombre_facultad, id_facultad from Facultad", conex);
-            MySqlCommand cmd = new MySqlCommand("select '<<Selecione un valor>>' as nombre_facultad,-1 as id_facultad from facultad union select nombre_facultad, id_facultad from Facultad",conex);
+            MySqlCommand cmd = new MySqlCommand("select '<<Selecione un valor>>' as nombre_facultad,-1 as id_facultad from facultad union select nombre_facultad, id_facultad from Facultad", conex);
             MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
 
             adap.Fill(cargadt);
@@ -48,7 +48,7 @@ namespace AsignaciondeCursos
             cbo_facultad.DisplayMember = "nombre_facultad";
             cbo_facultad.ValueMember = "id_facultad";
 
-            
+
 
         }
 
@@ -97,7 +97,7 @@ namespace AsignaciondeCursos
                 DataTable dt = new DataTable();
 
                 //MySqlCommand cmd = new MySqlCommand("select anio_pensum from Pensum where id_carrera=" + id_carrera, conex);
-                MySqlCommand cmd = new MySqlCommand("select '<<Selecione un año>>' as anio_pensum from Pensum union select anio_pensum from Pensum where id_carrera="+ id_carrera,conex);
+                MySqlCommand cmd = new MySqlCommand("select '<<Selecione un año>>' as anio_pensum from Pensum union select anio_pensum from Pensum where id_carrera=" + id_carrera, conex);
                 //MySqlCommand cmd = new MySqlCommand("select '<<Selecione un valor>>' as nombre_facultad,-1 as id_facultad from facultad union select nombre_facultad, id_facultad from Facultad", conex);
                 MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
 
@@ -111,7 +111,7 @@ namespace AsignaciondeCursos
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         private void cbo_pensum_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,136 +134,145 @@ namespace AsignaciondeCursos
 
                 adapp.Fill(dt);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
-            
+
+
         }
 
-         
 
-      
+
+
         private void btn_vistaprevia_Click(object sender, EventArgs e)
         {
-            
-            try
+             id_facultad= cbo_facultad.SelectedValue.ToString().Trim();
+             id_carrera = cbo_carrera.SelectedValue.ToString().Trim();
+             anio_pensum = cbo_pensum.SelectedValue.ToString().Trim();
+            if ( id_facultad == "<<Seleccione una carrera>>" ||  id_carrera== "<<Seleccione un valor>>" ||  anio_pensum== "<<Selecione un año>>")
             {
-                String ruta = "";
-                ruta = @"C:\Users\Marvin\Documents\PensumsGenerados";
+                MessageBox.Show("Uno o más campos están vacios");
+            }
+            else
+            { 
+                try
+                {
+                    String ruta = "";
+                    ruta = @"C:\Users\Marvin\Documents\PensumsGenerados";
 
-                Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-                PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta + "pensum.pdf", FileMode.Create));
-                DocumentoPensum.Open();
-                // ---------------------- la hoja de de PDF tiene un ancho de 600 
-                //------------------------ LOGO UNIVERSIDAD 
-                iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("logo2.jpg");
-                logo.SetAbsolutePosition(30f, 650f);
-                //logo.Alignment = Element.ALIGN_LEFT;
-                logo.ScaleAbsoluteHeight(125);
-                logo.ScaleAbsoluteWidth(125);
+                    Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+                    PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta + "pensum.pdf", FileMode.Create));
+                    DocumentoPensum.Open();
+                    // ---------------------- la hoja de de PDF tiene un ancho de 600 
+                    //------------------------ LOGO UNIVERSIDAD 
+                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("logo2.jpg");
+                    logo.SetAbsolutePosition(30f, 650f);
+                    //logo.Alignment = Element.ALIGN_LEFT;
+                    logo.ScaleAbsoluteHeight(125);
+                    logo.ScaleAbsoluteWidth(125);
 
-                DocumentoPensum.Add(logo);
+                    DocumentoPensum.Add(logo);
 
-                // Formatos del Pdf
-                iTextSharp.text.Font formatotitulos = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
-                iTextSharp.text.Font formatocuerpo = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
+                    // Formatos del Pdf
+                    iTextSharp.text.Font formatotitulos = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
+                    iTextSharp.text.Font formatocuerpo = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
 
 
 
-                // Encabezado umg
-                Paragraph encabezado = new Paragraph(new Phrase("\nUniversidad Complutense de Madrid\n" + cbo_facultad.Text + "\n" + cbo_carrera.Text + "\nPensum " + cbo_pensum.Text, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
-                encabezado.Alignment = Element.ALIGN_CENTER;
-                DocumentoPensum.Add(encabezado);
+                    // Encabezado umg
+                    Paragraph encabezado = new Paragraph(new Phrase("\nUniversidad Complutense de Madrid\n" + cbo_facultad.Text + "\n" + cbo_carrera.Text + "\nPensum " + cbo_pensum.Text, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
+                    encabezado.Alignment = Element.ALIGN_CENTER;
+                    DocumentoPensum.Add(encabezado);
 
-                Paragraph titulos = new Paragraph(new Phrase("\n\n\n\n       Código       Curso           Créditos        Requisitos", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
-                titulos.Alignment = Element.ALIGN_CENTER;
-                DocumentoPensum.Add(titulos);
+                    Paragraph titulos = new Paragraph(new Phrase("\n\n\n\n       Código       Curso           Créditos        Requisitos", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 13f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+                    titulos.Alignment = Element.ALIGN_CENTER;
+                    DocumentoPensum.Add(titulos);
 
-                // ------------------------ INICIO DE LA TOMA DE DATOS DE LA BASE DE DATOS Y ENVIARLOS AL PDF SEGUN PETICION DEL ESTUDIANTE
-                // DEFINICION DE VARIABLES PARA ENVIAR DATOS AL PDF DE PENSUM
-                
-                for (int num_semestre = 1; num_semestre <= 12; num_semestre++)
-                { 
-                    string nuevo_num_semestre = num_semestre.ToString();// DEFINICION DE VARIABLES PARA ENVIAR DATOS AL PDF DE PENSUM
-                    DataTable consulta = null;
-                    consulta = ClaseReportes.DatosPensum(id_carrera, anio_pensum, nuevo_num_semestre);
-                    dgv_muestra.DataSource = consulta;
-                    Phrase semestre = null;
+                    // ------------------------ INICIO DE LA TOMA DE DATOS DE LA BASE DE DATOS Y ENVIARLOS AL PDF SEGUN PETICION DEL ESTUDIANTE
+                    // DEFINICION DE VARIABLES PARA ENVIAR DATOS AL PDF DE PENSUM
 
-                    
-                    switch (num_semestre) // EL SWITCH VA A DETERMINAR CUANDO VA A COLOCAR UNA ETIQUETA DE NUMERO DE SEMESTRE
+                    for (int num_semestre = 1; num_semestre <= 12; num_semestre++)
                     {
-                        case 1:
-                        
-                        semestre = new Phrase("\nPRIMER SEMESTRE", formatotitulos);
-                        DocumentoPensum.Add(semestre);break;
+                        string nuevo_num_semestre = num_semestre.ToString();// DEFINICION DE VARIABLES PARA ENVIAR DATOS AL PDF DE PENSUM
+                        DataTable consulta = null;
+                        consulta = ClaseReportes.DatosPensum(id_carrera, anio_pensum, nuevo_num_semestre);
+                        dgv_muestra.DataSource = consulta;
+                        Phrase semestre = null;
 
-                        case 2:
-                        semestre = null;
-                        semestre = new Phrase("\nSEGUNDO SEMESTRE", formatotitulos);
-                        DocumentoPensum.Add(semestre); break;
 
-                        case 3:
-                        semestre = null;
-                        semestre = new Phrase("\nTERCER SEMESTRE", formatotitulos);
-                        DocumentoPensum.Add(semestre); break;
+                        switch (num_semestre) // EL SWITCH VA A DETERMINAR CUANDO VA A COLOCAR UNA ETIQUETA DE NUMERO DE SEMESTRE
+                        {
+                            case 1:
 
-                        case 4:
-                            semestre = null;
-                            semestre = new Phrase("\nCUARTO SEMESTRE", formatotitulos);
-                            DocumentoPensum.Add(semestre); break;
+                                semestre = new Phrase("\nPRIMER SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
 
-                        case 5:
-                            semestre = null;
-                            semestre = new Phrase("\nQUINTO SEMESTRE", formatotitulos);
-                            DocumentoPensum.Add(semestre); break;
-
-                        case 6:
-                            semestre = null;
-                            semestre = new Phrase("\nSEXTO SEMESTRE", formatotitulos);
-                            DocumentoPensum.Add(semestre); break;
-
-                        case 7:
-                            semestre = null;
-                            semestre = new Phrase("\nSEPTIMO SEMESTRE", formatotitulos);
-                            DocumentoPensum.Add(semestre); break;
-
-                        case 8:
-                            semestre = null;
-                            semestre = new Phrase("\nOCTAVO SEMESTRE", formatotitulos);
-                            DocumentoPensum.Add(semestre); break;
-
-                        case 9:
-                            
-                            semestre = new Phrase("\nNOVENO SEMESTRE", formatotitulos);
-                            DocumentoPensum.Add(semestre); break;
-
-                        case 10:
-                            semestre = null;
-                            semestre = new Phrase("\nDECIMO SEMESTRE", formatotitulos);
-                            DocumentoPensum.Add(semestre); break;
-
-                        case 11:
-                            
-                            if (consulta != null)
-                            {
+                            case 2:
                                 semestre = null;
-                                semestre = new Phrase("\nONCEAVO SEMESTRE", formatotitulos);
-                                DocumentoPensum.Add(semestre);
-                            }break;                      
-                                
-                            
+                                semestre = new Phrase("\nSEGUNDO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
 
-                        case 12:
-                            semestre = null;
-                            semestre = new Phrase("\nDOCEAVO SEMESTRE", formatotitulos);
-                            DocumentoPensum.Add(semestre); break;
-                    }
+                            case 3:
+                                semestre = null;
+                                semestre = new Phrase("\nTERCER SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
 
-                    //if (num_semestre <=  8)
-                    
+                            case 4:
+                                semestre = null;
+                                semestre = new Phrase("\nCUARTO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
+
+                            case 5:
+                                semestre = null;
+                                semestre = new Phrase("\nQUINTO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
+
+                            case 6:
+                                semestre = null;
+                                semestre = new Phrase("\nSEXTO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
+
+                            case 7:
+                                semestre = null;
+                                semestre = new Phrase("\nSEPTIMO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
+
+                            case 8:
+                                semestre = null;
+                                semestre = new Phrase("\nOCTAVO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
+
+                            case 9:
+
+                                semestre = new Phrase("\nNOVENO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
+
+                            case 10:
+                                semestre = null;
+                                semestre = new Phrase("\nDECIMO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
+
+                            case 11:
+
+                                if (consulta != null)
+                                {
+                                    semestre = null;
+                                    semestre = new Phrase("\nONCEAVO SEMESTRE", formatotitulos);
+                                    DocumentoPensum.Add(semestre);
+                                }
+                                break;
+
+
+
+                            case 12:
+                                semestre = null;
+                                semestre = new Phrase("\nDOCEAVO SEMESTRE", formatotitulos);
+                                DocumentoPensum.Add(semestre); break;
+                        }
+
+                        //if (num_semestre <=  8)
+
                         for (int control = 0; control < dgv_muestra.Rows.Count - 1; control++)// CICLO FOR QUE VA A RECORRER EL DATA GRIED PARA LEER LOS DATOS Y ENVIARLOS AL PDF, SE VAN A LIMPIAR LAS VARIABLES EN CADA CICLO PARA REUTILIZARLAS
                         {
                             Paragraph ciclouno = new Paragraph(new Phrase("\n              " + dgv_muestra.Rows[control].Cells["codigo_curso"].Value.ToString() + "      " + dgv_muestra.Rows[control].Cells["nombre_curso"].Value.ToString() + "         " + dgv_muestra.Rows[control].Cells["no_creditos"].Value.ToString() + "              " + dgv_muestra.Rows[control].Cells["prerrequisitos"].Value.ToString(), formatocuerpo));
@@ -273,21 +282,23 @@ namespace AsignaciondeCursos
                         }
                         dgv_muestra.DataSource = "";
                         consulta = null;
-                    
-                                        }
+
+                    }
 
 
-                
-                DocumentoPensum.Close(); // se cierra el documento una ves realizados los cambios
 
-                System.Diagnostics.Process.Start(ruta + "pensum.pdf"); // el documento PDF se ejecuta automaticamente para que no se haga el doble cli
+                    DocumentoPensum.Close(); // se cierra el documento una ves realizados los cambios
+
+                    System.Diagnostics.Process.Start(ruta + "pensum.pdf"); // el documento PDF se ejecuta automaticamente para que no se haga el doble cli
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
+
+
         }
-
-        
     }
 }
