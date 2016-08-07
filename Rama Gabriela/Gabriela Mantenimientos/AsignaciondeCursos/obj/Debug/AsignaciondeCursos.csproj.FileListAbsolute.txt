@@ -1,0 +1,96 @@
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe.config
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.pdb
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csprojResolveAssemblyReference.cache
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Administrativo.resources
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Properties.Resources.resources
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csproj.GenerateResource.Cache
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.exe
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.pdb
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarAlumno.resources
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarCated.resources
+c:\users\chrix\documents\visual studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Login.resources
+C:\Users\Chrix\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\MySql.Data.dll
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe.config
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.exe
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.pdb
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.pdb
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csprojResolveAssemblyReference.cache
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Administrativo.resources
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_AgregarCatedratico.resources
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarAlumno.resources
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarCated.resources
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_FacutadCarreraPensum.resources
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_IngresarEstudiante.resources
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_IngresoCurso.resources
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Login.resources
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Properties.Resources.resources
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csproj.GenerateResource.Cache
+C:\Users\Chrix\Desktop\proyecto para enviar a dylan\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_EdificioSalon.resources
+C:\Users\Chrix\Desktop\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe.config
+C:\Users\Chrix\Desktop\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.exe
+C:\Users\Chrix\Desktop\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.pdb
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe.config
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.exe
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.pdb
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.pdb
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\MySql.Data.dll
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\MySql.Data.xml
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csprojResolveAssemblyReference.cache
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Administrativo.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_AgregarCatedratico.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarAlumno.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarCated.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_EdificioSalon.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_FacutadCarreraPensum.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_IngresarEstudiante.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_IngresoCurso.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Login.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Properties.Resources.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\PRIMERA\Revisada\1era revision AsignacionDeCursos Correcciones\prototipo no funcional\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csproj.GenerateResource.Cache
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe.config
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.exe
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.pdb
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.pdb
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csprojResolveAssemblyReference.cache
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Administrativo.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_AgregarCatedratico.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarAlumno.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarCated.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_EdificioSalon.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_FacutadCarreraPensum.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_IngresarEstudiante.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_IngresoCurso.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Login.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Properties.Resources.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csproj.GenerateResource.Cache
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe.config
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.exe
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.pdb
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.exe
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\AsignaciondeCursos.pdb
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\MySql.Data.dll
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\bin\Debug\MySql.Data.xml
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csprojResolveAssemblyReference.cache
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Administrativo.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_AgregarCatedratico.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarAlumno.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_AsignarCated.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_EdificioSalon.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_FacutadCarreraPensum.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_IngresarEstudiante.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.form_IngresoCurso.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Form_Login.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Properties.Resources.resources
+C:\Users\ccarrera\Documents\Octavo Ciclo\diseno de sistemas\New folder\Nuevo\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.csproj.GenerateResource.Cache
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.carrera.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Mantenimiento_Pensum.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.agregar_pensum.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.modificar_pensum.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Mantenimiento_facultad.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Modificar_facultaad.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Mantenimiento_carrera.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2015\Projects\AsignaciondeCursos\AsignaciondeCursos\obj\Debug\AsignaciondeCursos.Modificar_carrera.resources
