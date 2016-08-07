@@ -121,7 +121,7 @@
             this.llbl_pensum.Size = new System.Drawing.Size(45, 13);
             this.llbl_pensum.TabIndex = 7;
             this.llbl_pensum.TabStop = true;
-            this.llbl_pensum.Text = "Pensum\r\n";
+            this.llbl_pensum.Text = "Pensum";
             this.llbl_pensum.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_pensum_LinkClicked);
             // 
             // linkLabel14
@@ -139,10 +139,10 @@
             this.llbl_alumnos.AutoSize = true;
             this.llbl_alumnos.Location = new System.Drawing.Point(68, 32);
             this.llbl_alumnos.Name = "llbl_alumnos";
-            this.llbl_alumnos.Size = new System.Drawing.Size(47, 13);
+            this.llbl_alumnos.Size = new System.Drawing.Size(99, 13);
             this.llbl_alumnos.TabIndex = 8;
             this.llbl_alumnos.TabStop = true;
-            this.llbl_alumnos.Text = "Alumnos";
+            this.llbl_alumnos.Text = "Listado de Alumnos";
             this.llbl_alumnos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_alumnos_LinkClicked);
             // 
             // linkLabel13
@@ -160,10 +160,11 @@
             this.linkLabel12.AutoSize = true;
             this.linkLabel12.Location = new System.Drawing.Point(68, 54);
             this.linkLabel12.Name = "linkLabel12";
-            this.linkLabel12.Size = new System.Drawing.Size(61, 13);
+            this.linkLabel12.Size = new System.Drawing.Size(115, 13);
             this.linkLabel12.TabIndex = 9;
             this.linkLabel12.TabStop = true;
-            this.linkLabel12.Text = "linkLabel12";
+            this.linkLabel12.Text = "Certificación de Cursos";
+            this.linkLabel12.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel12_LinkClicked);
             // 
             // spc_ingresos
             // 

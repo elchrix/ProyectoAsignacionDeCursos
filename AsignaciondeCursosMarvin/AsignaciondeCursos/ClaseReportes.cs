@@ -64,7 +64,19 @@ namespace AsignaciondeCursos
             return dat;
         }
 
+        public static DataTable DatosCertificacionDeCursos(String id_carrera, String id_anioingreso, String uid)
+        {
+            String ap = "aprobado";
+            MySqlConnection con = Conexion.ObtenerConexion();
 
+            DataTable dt = new DataTable();
+            string query = "select  al.id_carrera,al.anio_ingreso,al.no_carne, al.primer_nombre,al.segundo_nombre,al.primer_apellido,al.segundo_apellido,cu.codigo_curso,cu.nombre_curso,cr.nota from alumno as al inner join cursos_recibidos as cr on(al.id_carrera = cr.id_carrera)inner join curso as cu on(cr.id_carrera = cu.id_carrera) where al.id_carrera ='" +id_carrera+ "'and al.anio_ingreso ='"+ id_anioingreso +"'and al.no_carne = '"+ uid +"'and cr.nota = '"+ ap +"'";
+            MySqlCommand comando = new MySqlCommand(query, con);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+            adaptador.Fill(dt);
+            con.Close();
+            return dt;
+        }
 
     }
 }

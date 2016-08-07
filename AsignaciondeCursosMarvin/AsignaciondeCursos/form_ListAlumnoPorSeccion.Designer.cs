@@ -87,7 +87,7 @@
             // 
             // btn_GenerarLista
             // 
-            this.btn_GenerarLista.Location = new System.Drawing.Point(189, 225);
+            this.btn_GenerarLista.Location = new System.Drawing.Point(265, 225);
             this.btn_GenerarLista.Name = "btn_GenerarLista";
             this.btn_GenerarLista.Size = new System.Drawing.Size(104, 62);
             this.btn_GenerarLista.TabIndex = 8;

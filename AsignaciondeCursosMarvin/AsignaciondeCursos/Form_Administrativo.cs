@@ -91,5 +91,18 @@ namespace AsignaciondeCursos
             this.spc_principal.Panel2.Tag = f;
             f.Show();
         }
+
+        private void linkLabel12_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (this.spc_principal.Panel2.Controls.Count > 0)
+                this.spc_principal.Panel2.Controls.RemoveAt(0);
+            form_CertificacionDeCursos f = new form_CertificacionDeCursos();
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+            this.spc_principal.Panel2.Controls.Add(f);
+            this.spc_principal.Panel2.Tag = f;
+            f.Show();
+        }
     }
 }
