@@ -39,3 +39,44 @@ C:\Users\Usuario\Documents\Visual Studio 2015\Projects\catedratico\catedratico\b
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\catedratico\catedratico\bin\Release\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\catedratico\catedratico\obj\Release\catedratico.exe
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\catedratico\catedratico\obj\Release\catedratico.pdb
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\catedratico.exe.config
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\obj\Release\catedratico.exe
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\obj\Release\catedratico.pdb
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\Form_Login.resx
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\Form_Login.cs
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\Form_Login.Designer.cs
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\catedratico.exe
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\catedratico.pdb
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\MySql.Data.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\MySql.Fabric.Plugin.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\MySql.Web.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\WebMatrix.WebData.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.WebPages.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\WebMatrix.Data.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.Helpers.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.Razor.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\WebMatrix.WebData.xml
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.WebPages.xml
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\WebMatrix.Data.xml
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.Helpers.xml
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\Microsoft.Web.Infrastructure.xml
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.Razor.xml
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\es\WebMatrix.WebData.resources.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\es\System.Web.WebPages.resources.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\es\WebMatrix.Data.resources.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\es\System.Web.Helpers.resources.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\es\System.Web.Razor.resources.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\bin\Release\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\obj\Release\catedratico.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\obj\Release\catedratico.form_cat.resources
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\obj\Release\catedratico.form_cursosact.resources
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\obj\Release\catedratico.form_historial.resources
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\obj\Release\catedratico.Form_Login.resources
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\obj\Release\catedratico.Properties.Resources.resources
+C:\Users\Usuario\OneDrive\UMG\OCTAVO CICLO\DDS\catedratico\catedratico\obj\Release\catedratico.csproj.GenerateResource.Cache

@@ -29,5 +29,19 @@ namespace catedratico
             this.splitContainer1.Panel2.Tag = fhist;
             fhist.Show();
         }
+
+        private void form_cat_Load(object sender, EventArgs e)
+        {
+            this.Visible = false;
+
+        }
+
+        private void form_cat_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            Form_Login fl = new Form_Login();
+            fl.Show();
+        }
     }
+   
 }

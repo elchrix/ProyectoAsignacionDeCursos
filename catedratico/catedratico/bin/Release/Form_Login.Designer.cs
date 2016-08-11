@@ -70,11 +70,11 @@
             // 
             // btn_logear
             // 
-            this.btn_logear.Location = new System.Drawing.Point(277, 303);
+            this.btn_logear.Location = new System.Drawing.Point(281, 229);
             this.btn_logear.Name = "btn_logear";
             this.btn_logear.Size = new System.Drawing.Size(75, 23);
             this.btn_logear.TabIndex = 7;
-            this.btn_logear.Text = "Logear";
+            this.btn_logear.Text = "Log in";
             this.btn_logear.UseVisualStyleBackColor = true;
             this.btn_logear.Click += new System.EventHandler(this.btn_logear_Click);
             // 

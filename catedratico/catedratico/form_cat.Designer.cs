@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btn_historial = new System.Windows.Forms.Button();
             this.btn_cursosact = new System.Windows.Forms.Button();
+            this.btn_historial = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -50,6 +50,15 @@
             this.splitContainer1.SplitterDistance = 243;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btn_cursosact
+            // 
+            this.btn_cursosact.Location = new System.Drawing.Point(32, 212);
+            this.btn_cursosact.Name = "btn_cursosact";
+            this.btn_cursosact.Size = new System.Drawing.Size(175, 100);
+            this.btn_cursosact.TabIndex = 1;
+            this.btn_cursosact.Text = "Cursos activos";
+            this.btn_cursosact.UseVisualStyleBackColor = true;
+            // 
             // btn_historial
             // 
             this.btn_historial.Location = new System.Drawing.Point(32, 38);
@@ -60,15 +69,6 @@
             this.btn_historial.UseVisualStyleBackColor = true;
             this.btn_historial.Click += new System.EventHandler(this.btn_historial_Click);
             // 
-            // btn_cursosact
-            // 
-            this.btn_cursosact.Location = new System.Drawing.Point(32, 212);
-            this.btn_cursosact.Name = "btn_cursosact";
-            this.btn_cursosact.Size = new System.Drawing.Size(175, 100);
-            this.btn_cursosact.TabIndex = 1;
-            this.btn_cursosact.Text = "Cursos activos";
-            this.btn_cursosact.UseVisualStyleBackColor = true;
-            // 
             // form_cat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -77,6 +77,8 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "form_cat";
             this.Text = "Modulo Catedratico";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_cat_FormClosing);
+            this.Load += new System.EventHandler(this.form_cat_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);

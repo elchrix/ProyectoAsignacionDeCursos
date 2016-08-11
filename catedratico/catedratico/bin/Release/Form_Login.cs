@@ -42,13 +42,16 @@ namespace catedratico
 
 
 
-                    if (sTipo == "administrativo")
+                    if (sTipo == "catedratico")
                     {
                         if (txt_contraseña.Text.Trim() == sContra.Trim())
                         {
-                            Usuario.UserName = sUsuario.Trim();
-                            MessageBox.Show("lolxD");
                             this.Hide();
+                            Usuario.UserName = sUsuario.Trim();
+                            //MessageBox.Show("lolxD");
+                            form_cat fc = new form_cat();
+                            fc.ShowDialog();
+                            
                         }
                         else
                         {
