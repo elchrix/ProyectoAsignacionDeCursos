@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace AsignaciondeCursos
 {
@@ -36,6 +39,7 @@ namespace AsignaciondeCursos
             cbo_semestre.SelectedIndex = 0;
             cbo_año.SelectedIndex = 0;
             //cbo_año.SelectedIndex = 0;
+           // btn_dire.Enabled = false;<---------------------------------------------------<<
         }
 
         private void llenar_cbojornada(ComboBox cbo_jor)
@@ -65,7 +69,7 @@ namespace AsignaciondeCursos
             String sCarrera = txt_carrera.Text.Trim();
                 String sAño = txt_año.Text.Trim();
                 String sCarne = txt_carne.Text.Trim();
-
+            //btn_dire.Enabled = false; <-------------------------------------------------------<<
                 MySqlConnection con = Conexion.ObtenerConexion();
 
                 //OBTENER NOMBRE, DIRECCION Y CORREO DEL ALUMNO:
@@ -78,6 +82,18 @@ namespace AsignaciondeCursos
                 adaptador.Fill(dt);
             if (dt.Rows.Count != 0)
             {
+                LimpiarCursos();
+                chb_asignar1.Enabled = true;
+                chb_asignar2.Enabled = true;
+                chb_asignar3.Enabled = true;
+                chb_asignar4.Enabled = true;
+                chb_asignar5.Enabled = true;
+                chb_asignar6.Enabled = true;
+                chb_asignar7.Enabled = true;
+                chb_asignar8.Enabled = true;
+                chb_asignar9.Enabled = true;
+                chb_asignar10.Enabled = true;
+
                 DataRow fila1 = dt.Rows[0];
                 lbl_nombre.Text = fila1[0].ToString() + " " + fila1[1].ToString() + " " + fila1[2].ToString() + " " + fila1[3].ToString();
                 lbl_direccion.Text = fila1[4].ToString();
@@ -554,6 +570,18 @@ namespace AsignaciondeCursos
 
         private void txt_carrera_MouseClick(object sender, MouseEventArgs e)
         {
+            chb_asignar1.Enabled = true;
+            chb_asignar2.Enabled = true;
+            chb_asignar3.Enabled = true;
+            chb_asignar4.Enabled = true;
+            chb_asignar5.Enabled = true;
+            chb_asignar6.Enabled = true;
+            chb_asignar7.Enabled = true;
+            chb_asignar8.Enabled = true;
+            chb_asignar9.Enabled = true;
+            chb_asignar10.Enabled = true;
+
+           // btn_dire.Enabled = false;<<------------------------------------<<<
             //LIMIMPAR INFO DEL ALUMNO
             txt_carrera.Text = "";
             txt_año.Text = "";
@@ -587,6 +615,7 @@ namespace AsignaciondeCursos
             lbl_hora1.Text = "";
             lbl_hora1.Visible = false;
             cbo_sec1.Items.Clear();
+            cbo_sec1.Text="";
 
             lbl_cod2.Text = "";
             lbl_cod2.Visible = false;
@@ -603,6 +632,7 @@ namespace AsignaciondeCursos
             lbl_hora2.Text = "";
             lbl_hora2.Visible = false;
             cbo_sec2.Items.Clear();
+            cbo_sec2.Text = "";
 
             lbl_cod3.Text = "";
             lbl_cod3.Visible = false;
@@ -619,6 +649,7 @@ namespace AsignaciondeCursos
             lbl_hora3.Text = "";
             lbl_hora3.Visible = false;
             cbo_sec3.Items.Clear();
+            cbo_sec3.Text = "";
 
             lbl_cod4.Text = "";
             lbl_cod4.Visible = false;
@@ -635,6 +666,7 @@ namespace AsignaciondeCursos
             lbl_hora4.Text = "";
             lbl_hora4.Visible = false;
             cbo_sec4.Items.Clear();
+            cbo_sec4.Text = "";
 
             lbl_cod5.Text = "";
             lbl_cod5.Visible = false;
@@ -651,6 +683,7 @@ namespace AsignaciondeCursos
             lbl_hora5.Text = "";
             lbl_hora5.Visible = false;
             cbo_sec5.Items.Clear();
+            cbo_sec5.Text = "";
 
             lbl_cod6.Text = "";
             lbl_cod6.Visible = false;
@@ -667,6 +700,7 @@ namespace AsignaciondeCursos
             lbl_hora6.Text = "";
             lbl_hora6.Visible = false;
             cbo_sec6.Items.Clear();
+            cbo_sec6.Text = "";
 
             lbl_cod7.Text = "";
             lbl_cod7.Visible = false;
@@ -683,6 +717,7 @@ namespace AsignaciondeCursos
             lbl_hora7.Text = "";
             lbl_hora7.Visible = false;
             cbo_sec7.Items.Clear();
+            cbo_sec7.Text = "";
 
             lbl_cod8.Text = "";
             lbl_cod8.Visible = false;
@@ -699,6 +734,7 @@ namespace AsignaciondeCursos
             lbl_hora8.Text = "";
             lbl_hora8.Visible = false;
             cbo_sec8.Items.Clear();
+            cbo_sec8.Text = "";
 
             lbl_cod9.Text = "";
             lbl_cod9.Visible = false;
@@ -715,6 +751,7 @@ namespace AsignaciondeCursos
             lbl_hora9.Text = "";
             lbl_hora9.Visible = false;
             cbo_sec9.Items.Clear();
+            cbo_sec9.Text = "";
 
             lbl_cod10.Text = "";
             lbl_cod10.Visible = false;
@@ -731,6 +768,7 @@ namespace AsignaciondeCursos
             lbl_hora10.Text = "";
             lbl_hora10.Visible = false;
             cbo_sec10.Items.Clear();
+            cbo_sec10.Text = "";
 
             iCont = 1;
         }
@@ -806,85 +844,99 @@ namespace AsignaciondeCursos
 
         private void MostrarHorario(string curso, Label lbl_hora, ComboBox cbo_jor)
         {
-            if (!String.IsNullOrEmpty(curso))
-            {
-                char delimitador = '-';
-                string[] tokens = new string[3];
-                tokens = curso.Split(delimitador);
+            try {
+                if (!String.IsNullOrEmpty(curso))
+                {
+                    char delimitador = '-';
+                    string[] tokens = new string[3];
+                    tokens = curso.Split(delimitador);
 
-                String sCarrera = tokens[0];
-                String sCod_curso = tokens[1];
-                
-                MySqlConnection con = Conexion.ObtenerConexion();
-                DataTable dt = new DataTable();
-                String sQuery ="select numero from Curso where id_carrera = '"+sCarrera+"' and codigo_curso = '"+sCod_curso+"'";
-                MySqlCommand comando = new MySqlCommand(sQuery, con);
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
-                adaptador.Fill(dt);
-                DataRow fila = dt.Rows[0];
-                String numero = fila[0].ToString().Trim();
+                    String sCarrera = tokens[0];
+                    String sCod_curso = tokens[1];
+
+                    MySqlConnection con = Conexion.ObtenerConexion();
+                    DataTable dt = new DataTable();
+                    String sQuery = "select numero from Curso where id_carrera = '" + sCarrera + "' and codigo_curso = '" + sCod_curso + "'";
+                    MySqlCommand comando = new MySqlCommand(sQuery, con);
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+                    adaptador.Fill(dt);
+                    DataRow fila = dt.Rows[0];
+                    String numero = fila[0].ToString().Trim();
 
 
-                dt.Reset();
-                String sQuery2 = "select horario, dias from Horario where hora = '" + numero + "' and id_jornada = '" + cbo_jor.SelectedValue.ToString().Trim() + "'";
-                MySqlCommand comando2 = new MySqlCommand(sQuery2, con);
-                MySqlDataAdapter adaptador2 = new MySqlDataAdapter(comando2);
-                adaptador2.Fill(dt);
-                fila = dt.Rows[0];
-                String horario = fila[0].ToString().Trim();
-                String dias = fila[1].ToString().Trim();
-                lbl_hora.Visible = true;
-                
-                //---
-                DataTable dts = MantenimientosManejo.CargarGrid("select no_salon, id_edificio from Salon order by RAND() LIMIT 1");
-                DataRow filas = dts.Rows[0];
-                String salon = filas[0].ToString();
-                String edificio = filas[1].ToString();
-                lbl_hora.Text = horario + " " + dias+" | "+edificio+" "+salon ;
-                //--------
+                    dt.Reset();
+                    String sQuery2 = "select horario, dias from Horario where hora = '" + numero + "' and id_jornada = '" + cbo_jor.SelectedValue.ToString().Trim() + "'";
+                    MySqlCommand comando2 = new MySqlCommand(sQuery2, con);
+                    MySqlDataAdapter adaptador2 = new MySqlDataAdapter(comando2);
+                    adaptador2.Fill(dt);
+                    fila = dt.Rows[0];
+                    String horario = fila[0].ToString().Trim();
+                    String dias = fila[1].ToString().Trim();
+                    lbl_hora.Visible = true;
 
-                //lbl_hora.Text = horario + " " + dias ;
-                con.Close();
+                    //---
+                    DataTable dts = MantenimientosManejo.CargarGrid("select no_salon, id_edificio from Salon order by RAND() LIMIT 1");
+                    DataRow filas = dts.Rows[0];
+                    String salon = filas[0].ToString();
+                    String edificio = filas[1].ToString();
+                    lbl_hora.Text = horario + " " + dias + " | " + edificio + " " + salon;
+                    //--------
+
+                    //lbl_hora.Text = horario + " " + dias ;
+                    con.Close();
+                }
             }
-        }
+            catch (System.Exception ex) { MessageBox.Show(ex.Message); }
+               
+            }
+        
 
 
         private void MostrarSecciones(String curso, ComboBox cbo_jor, ComboBox cbo_sec)
         {
-            if (!String.IsNullOrEmpty(curso))
-            {
-                char delimitador = '-';
-                string[] tokens = new string[3];
-                tokens = curso.Split(delimitador);
-
-                String sCarrera = tokens[0];
-                String sCod_curso = tokens[1];
-                String sJornada = cbo_jor.SelectedValue.ToString().Trim();
-                String año = cbo_año.Text.Trim();
-                String semestre = cbo_semestre.Text.Trim();
-
-                MySqlConnection con = Conexion.ObtenerConexion();
-                DataTable dt = new DataTable();
-                String sQuery = "select count(*) from Cursos_recibidos where id_carrera = '" + sCarrera + "' and codigo_curso = '" + sCod_curso + "' and id_jornada ='" + sJornada + "' and anio = '" + año + "' and semestre = '" + semestre + "'";
-                MySqlCommand comando = new MySqlCommand(sQuery, con);
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
-                adaptador.Fill(dt);
-                DataRow fila = dt.Rows[0];
-                int cant_alumnos = Convert.ToInt32(fila[0]);
-                // MessageBox.Show(cant_alumnos);
-                if (cant_alumnos < 40)
+            try {
+                cbo_sec.Items.Clear();
+                if (!String.IsNullOrEmpty(curso))
                 {
-                    cbo_sec.Items.Add("A");
+                    char delimitador = '-';
+                    string[] tokens = new string[3];
+                    tokens = curso.Split(delimitador);
+
+                    String sCarrera = tokens[0];
+                    String sCod_curso = tokens[1];
+                    String sJornada = cbo_jor.SelectedValue.ToString().Trim();
+                    String año = cbo_año.Text.Trim();
+                    String semestre = cbo_semestre.Text.Trim();
+
+                    MySqlConnection con = Conexion.ObtenerConexion();
+                    DataTable dt = new DataTable();
+                    String sQuery = "select count(*) from Cursos_recibidos where id_carrera = '" + sCarrera + "' and codigo_curso = '" + sCod_curso + "' and id_jornada ='" + sJornada + "' and anio = '" + año + "' and semestre = '" + semestre + "'";
+                    MySqlCommand comando = new MySqlCommand(sQuery, con);
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+                    adaptador.Fill(dt);
+                    DataRow fila = dt.Rows[0];
+                    int cant_alumnos = Convert.ToInt32(fila[0]);
+                    // MessageBox.Show(cant_alumnos);
+                    if (cant_alumnos < 40)
+                    {
+                        cbo_sec.Items.Add("A");
+                    
+                    } else if (cant_alumnos >= 40 && cant_alumnos < 80)
+                           {
+                        cbo_sec.Items.Add("A");
+                        cbo_sec.Items.Add("B");
+                                                                
+                           }
+                          else if (cant_alumnos >= 80 && cant_alumnos < 120)
+                              {
+                        cbo_sec.Items.Add("A");
+                        cbo_sec.Items.Add("B");
+                        cbo_sec.Items.Add("C");
+                               }
+                    con.Close();
                 }
-                //} else if (cant_alumnos > 40 && cant_alumnos < 80)
-                //       {
-                //  cbo_sec.Items.Add("B");
-                   //  bloquear seccion a
-                //       } else if ()
-                //              {
-                //              }
-                con.Close();
             }
+            catch(System.Exception ex) { MessageBox.Show(ex.Message); }
 
         }
 
@@ -1004,85 +1056,350 @@ namespace AsignaciondeCursos
 
         private void btn_asignar_Click(object sender, EventArgs e)
         {
+            bool asignado = false;
             try
             {
                 if (chb_asignar1.Checked == true)
                 {
                     AsignarCurso(lbl_cod1, cbo_jor1, cbo_sec1);
-                    //MySqlConnection con = Conexion.ObtenerConexion();
-                    //char delimitador = '-';
-                    //string[] tokens = new string[3];
-                    //tokens = lbl_cod1.Text.Trim().Split(delimitador);
-
-
-        //String cod_curso = tokens[1].Trim();
-        //String id_carrera = txt_carrera.Text.Trim();
-        //String año_ingreso = txt_año.Text.Trim();
-        //String carne = txt_carne.Text.Trim();
-        //String año = cbo_año.SelectedItem.ToString().Trim();
-        //String semestre = cbo_semestre.Text.Trim();
-
-        //String salon = "";
-        //String edificio = "";
-
-
-        //DataTable dt = MantenimientosManejo.CargarGrid("select numero from Curso where id_carrera = '"+id_carrera+"' and codigo_curso = '"+cod_curso+"'");
-        //DataRow fila = dt.Rows[0];
-
-        //String hora = fila[0].ToString().Trim();
-        //String jornada = cbo_jor1.SelectedValue.ToString().Trim();
-        //String seccion = cbo_sec1.SelectedItem.ToString().Trim();
-
-
-
-        //int resultado = AsignacionesManejo.InsertarAsignacion(id_carrera, cod_curso, año_ingreso, carne, año, semestre, salon, edificio, hora, jornada, seccion);
-        //if (resultado == 1)
-        //{
-        //    MessageBox.Show("asignación exitosa");
-        //}
-        //else { MessageBox.Show("imposible asignar"); }
-        //con.Close();
+                    asignado = true;
+         
                  }
                 if (chb_asignar2.Checked == true)
                 {
                     AsignarCurso(lbl_cod2, cbo_jor2, cbo_sec2);
+                    asignado = true;
                 }
                 if (chb_asignar3.Checked == true)
                 {
                     AsignarCurso(lbl_cod3, cbo_jor3, cbo_sec3);
+                    asignado = true;
                 }
                 if (chb_asignar4.Checked == true)
                 {
                     AsignarCurso(lbl_cod4, cbo_jor4, cbo_sec4);
+                    asignado = true;
                 }
                 if (chb_asignar5.Checked == true)
                 {
                     AsignarCurso(lbl_cod5, cbo_jor5, cbo_sec5);
+                    asignado = true;
                 }
                 if (chb_asignar6.Checked == true)
                 {
                     AsignarCurso(lbl_cod6, cbo_jor6, cbo_sec6);
+                    asignado = true;
                 }
                 if (chb_asignar7.Checked == true)
                 {
                     AsignarCurso(lbl_cod7, cbo_jor7, cbo_sec7);
+                    asignado = true;
                 }
                 if (chb_asignar8.Checked == true)
                 {
                     AsignarCurso(lbl_cod8, cbo_jor8, cbo_sec8);
+                    asignado = true;
                 }
                 if (chb_asignar9.Checked == true)
                 {
                     AsignarCurso(lbl_cod9, cbo_jor9, cbo_sec9);
+                    asignado = true;
                 }
                 if (chb_asignar10.Checked == true)
                 {
                     AsignarCurso(lbl_cod10, cbo_jor10, cbo_sec10);
+                    asignado = true;
                 }
 
-                MessageBox.Show("Asignación realizada con exito");
+                if (asignado == true)
+                {
+                    MessageBox.Show("Asignación realizada con exito");
+                    chb_asignar1.Enabled = false;
+                    chb_asignar2.Enabled = false;
+                    chb_asignar3.Enabled = false;
+                    chb_asignar4.Enabled = false;
+                    chb_asignar5.Enabled = false;
+                    chb_asignar6.Enabled = false;
+                    chb_asignar7.Enabled = false;
+                    chb_asignar8.Enabled = false;
+                    chb_asignar9.Enabled = false;
+                    chb_asignar10.Enabled = false;
+
+                    btn_dire.Enabled = true;
+                }
+                else { MessageBox.Show("No hay cursos seleccionados"); }
             }
             catch(System.Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void ValidarSeccion(String curso, ComboBox cbo_jor, ComboBox cbo_sec)
+        {
+            try
+            {
+                //cbo_sec.Items.Clear();
+                if (!String.IsNullOrEmpty(curso))
+                {
+                    char delimitador = '-';
+                    string[] tokens = new string[3];
+                    tokens = curso.Split(delimitador);
+
+                    String sCarrera = tokens[0];
+                    String sCod_curso = tokens[1];
+                    String sJornada = cbo_jor.SelectedValue.ToString().Trim();
+                    String año = cbo_año.Text.Trim();
+                    String semestre = cbo_semestre.Text.Trim();
+
+                    MySqlConnection con = Conexion.ObtenerConexion();
+                    DataTable dt = new DataTable();
+                    String sQuery = "select count(*) from Cursos_recibidos where id_carrera = '" + sCarrera + "' and codigo_curso = '" + sCod_curso + "' and id_jornada ='" + sJornada + "' and anio = '" + año + "' and semestre = '" + semestre + "'";
+                    MySqlCommand comando = new MySqlCommand(sQuery, con);
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+                    adaptador.Fill(dt);
+                    DataRow fila = dt.Rows[0];
+                    int cant_alumnos = Convert.ToInt32(fila[0]);
+                    // MessageBox.Show(cant_alumnos);
+                    if (cant_alumnos < 40)
+                    {
+                        //if (cbo_sec1.SelectedIndex == 0)
+                        //{
+                        //    cbo_sec1.SelectedIndex = -1;
+                        //}
+
+                    }
+                    else if (cant_alumnos >= 40 && cant_alumnos < 80)
+                    {
+                        if (cbo_sec.SelectedIndex == 0)//seccion a
+                        {
+                            cbo_sec.SelectedIndex = -1;
+                            MessageBox.Show("sección llena");
+                        }
+
+                    }
+                    else if (cant_alumnos >= 80 && cant_alumnos < 120)//seccion b
+                    {
+                        if (cbo_sec.SelectedIndex == 1)
+                        {
+                            cbo_sec.SelectedIndex = -1;
+                            MessageBox.Show("sección llena");
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            catch (System.Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+
+        private void cbo_sec1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+            ValidarSeccion(lbl_cod1.Text.Trim(), cbo_jor1, cbo_sec1);
+        }
+
+        private void cbo_sec2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarSeccion(lbl_cod2.Text.Trim(), cbo_jor2, cbo_sec2);
+        }
+
+        private void cbo_sec3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarSeccion(lbl_cod3.Text.Trim(), cbo_jor3, cbo_sec3);
+        }
+
+        private void cbo_sec4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarSeccion(lbl_cod4.Text.Trim(), cbo_jor4, cbo_sec4);
+        }
+
+        private void cbo_sec5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarSeccion(lbl_cod5.Text.Trim(), cbo_jor5, cbo_sec5);
+        }
+
+        private void cbo_sec6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarSeccion(lbl_cod6.Text.Trim(), cbo_jor6, cbo_sec6);
+        }
+
+        private void cbo_sec7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarSeccion(lbl_cod7.Text.Trim(), cbo_jor7, cbo_sec7);
+        }
+
+        private void cbo_sec8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarSeccion(lbl_cod8.Text.Trim(), cbo_jor8, cbo_sec8);
+        }
+
+        private void cbo_sec9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarSeccion(lbl_cod9.Text.Trim(), cbo_jor9, cbo_sec9);
+        }
+
+        private void cbo_sec10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarSeccion(lbl_cod10.Text.Trim(), cbo_jor10, cbo_sec10);
+        }
+
+
+//------------IMPRIMIR DIRE---------
+
+            //private Document 
+
+
+
+        private void btn_dire_Click(object sender, EventArgs e)
+        {
+            try {
+                
+                    bool asignado = false;
+                    String nombre = "mipdf";
+                    Document nuevo_documento = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 30);// distancia margen izq , nose, distancia con la parte superior de la hoja, no se
+                    PdfWriter nombre_doc = PdfWriter.GetInstance(nuevo_documento, new FileStream(nombre + ".pdf", FileMode.Create));
+                    nuevo_documento.Open();
+
+                Paragraph datos_uni = new Paragraph(new Phrase("\n                Universidad Johnny Calito Flores de Guatemala \n                            22564178/22369854 \n                            12av 15 calle Z30   ", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+                datos_uni.IndentationLeft = 15;
+                nuevo_documento.Add(datos_uni);
+                //--------------
+
+                iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("walas.png");
+
+
+                logo.SetAbsolutePosition(53f, 380f);
+                logo.ScaleAbsoluteWidth(500);
+                logo.ScaleAbsoluteHeight(375);
+
+                nuevo_documento.Add(logo);
+
+                //--------------
+                Paragraph datos_alumno = new Paragraph(new Phrase("\n\nNombre: " + lbl_nombre.Text+"    Dirección: "+lbl_direccion.Text+"    Correo: "+lbl_correo.Text+ "  \nFacultad: "+lbl_facultad.Text+"    Carrera: "+lbl_carrera.Text+" ", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 10f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLUE)));
+                datos_alumno.IndentationLeft = 15;
+                nuevo_documento.Add(datos_alumno);
+
+                Paragraph datos_asignacion = new Paragraph(new Phrase("\n       Codigo       Curso       Jornada       Horario/Salón    Sección \n", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLUE)));
+                datos_asignacion.IndentationLeft = 15;
+                nuevo_documento.Add(datos_asignacion);
+
+                PdfPTable tabla1 = new PdfPTable(5);
+                tabla1.TotalWidth = 1200;
+                tabla1.HorizontalAlignment = Element.ALIGN_CENTER;
+
+                if (chb_asignar1.Checked == true)
+                    {
+                    //Paragraph datos_asignacion = new Paragraph(new Phrase("\n\n\n\n\n\n" + lbl_cod1.Text + "  " + lbl_cur1.Text + "     " + cbo_jor1.Text + "     " + lbl_hora1.Text + "     " + cbo_sec1.Text, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 9f, iTextSharp.text.Font.ITALIC, iTextSharp.text.BaseColor.BLACK)));
+                    //datos_asignacion.IndentationLeft = 15;
+                    //nuevo_documento.Add(datos_asignacion);
+                    tabla1.AddCell(lbl_cod1.Text);
+                    tabla1.AddCell(lbl_cur1.Text);
+                    tabla1.AddCell(cbo_jor1.Text);
+                    tabla1.AddCell(lbl_hora1.Text);
+                    tabla1.AddCell(cbo_sec1.Text);
+                   
+                    asignado = true;
+                    }
+                    if (chb_asignar2.Checked == true)
+                    {
+                 
+                    tabla1.AddCell(lbl_cod2.Text);
+                    tabla1.AddCell(lbl_cur2.Text);
+                    tabla1.AddCell(cbo_jor2.Text);
+                    tabla1.AddCell(lbl_hora2.Text);
+                    tabla1.AddCell(cbo_sec2.Text);
+                  
+                    asignado = true;
+                    }
+                    if (chb_asignar3.Checked == true)
+                    {
+                    tabla1.AddCell(lbl_cod3.Text);
+                    tabla1.AddCell(lbl_cur3.Text);
+                    tabla1.AddCell(cbo_jor3.Text);
+                    tabla1.AddCell(lbl_hora3.Text);
+                    tabla1.AddCell(cbo_sec3.Text);
+                   
+                    asignado = true;
+                    }
+                    if (chb_asignar4.Checked == true)
+                    {
+                    tabla1.AddCell(lbl_cod4.Text);
+                    tabla1.AddCell(lbl_cur4.Text);
+                    tabla1.AddCell(cbo_jor4.Text);
+                    tabla1.AddCell(lbl_hora4.Text);
+                    tabla1.AddCell(cbo_sec4.Text);
+                    asignado = true;
+                    }
+                    if (chb_asignar5.Checked == true)
+                    {
+                    tabla1.AddCell(lbl_cod5.Text);
+                    tabla1.AddCell(lbl_cur5.Text);
+                    tabla1.AddCell(cbo_jor5.Text);
+                    tabla1.AddCell(lbl_hora5.Text);
+                    tabla1.AddCell(cbo_sec5.Text);
+                    asignado = true;
+                    }
+                    if (chb_asignar6.Checked == true)
+                    {
+                    tabla1.AddCell(lbl_cod6.Text);
+                    tabla1.AddCell(lbl_cur6.Text);
+                    tabla1.AddCell(cbo_jor6.Text);
+                    tabla1.AddCell(lbl_hora6.Text);
+                    tabla1.AddCell(cbo_sec6.Text);
+                    asignado = true;
+
+                    }
+                    if (chb_asignar7.Checked == true)
+                    {
+                    tabla1.AddCell(lbl_cod7.Text);
+                    tabla1.AddCell(lbl_cur7.Text);
+                    tabla1.AddCell(cbo_jor7.Text);
+                    tabla1.AddCell(lbl_hora7.Text);
+                    tabla1.AddCell(cbo_sec7.Text);
+                    asignado = true;
+                    }
+                    if (chb_asignar8.Checked == true)
+                    {
+                    tabla1.AddCell(lbl_cod8.Text);
+                    tabla1.AddCell(lbl_cur8.Text);
+                    tabla1.AddCell(cbo_jor8.Text);
+                    tabla1.AddCell(lbl_hora8.Text);
+                    tabla1.AddCell(cbo_sec8.Text);
+                    asignado = true;
+                    }
+                    if (chb_asignar9.Checked == true)
+                    {
+                    tabla1.AddCell(lbl_cod9.Text);
+                    tabla1.AddCell(lbl_cur9.Text);
+                    tabla1.AddCell(cbo_jor9.Text);
+                    tabla1.AddCell(lbl_hora9.Text);
+                    tabla1.AddCell(cbo_sec9.Text);
+                    asignado = true;
+                    }
+                    if (chb_asignar10.Checked == true)
+                    {
+                    tabla1.AddCell(lbl_cod10.Text);
+                    tabla1.AddCell(lbl_cur10.Text);
+                    tabla1.AddCell(cbo_jor10.Text);
+                    tabla1.AddCell(lbl_hora10.Text);
+                    tabla1.AddCell(cbo_sec10.Text);
+                    asignado = true;
+                    }
+
+                    if (asignado == true)
+                    {
+                    nuevo_documento.Add(tabla1);
+                    nuevo_documento.Close();
+                        System.Diagnostics.Process.Start(nombre + ".pdf");
+                    }
+                    else
+                    {
+                        //nuevo_documento.Close();
+                        MessageBox.Show("no hay cursos asignados para mostrar en el diré");
+                    }
+               
+            }
+            catch (System.Exception ex) { MessageBox.Show(ex.Message); }
+    
+
         }
     }
 }

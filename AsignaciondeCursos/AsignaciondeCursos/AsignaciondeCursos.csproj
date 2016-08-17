@@ -81,6 +81,18 @@
     <Compile Include="form_AsignarCated.Designer.cs">
       <DependentUpon>form_AsignarCated.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_Bitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Bitacora.Designer.cs">
+      <DependentUpon>form_Bitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_CambiarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_CambiarContraseña.Designer.cs">
+      <DependentUpon>form_CambiarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_cat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,18 @@
     </Compile>
     <Compile Include="form_CertificacionDeCursos.Designer.cs">
       <DependentUpon>form_CertificacionDeCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_comprobacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_comprobacion.Designer.cs">
+      <DependentUpon>form_comprobacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_CrearCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_CrearCuenta.Designer.cs">
+      <DependentUpon>form_CrearCuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="form_cursosact.cs">
       <SubType>Form</SubType>
@@ -105,11 +129,11 @@
     <Compile Include="form_historial.Designer.cs">
       <DependentUpon>form_historial.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_ListAlumnoPorSeccion.cs">
+    <Compile Include="form_ListadoAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_ListAlumnoPorSeccion.Designer.cs">
-      <DependentUpon>form_ListAlumnoPorSeccion.cs</DependentUpon>
+    <Compile Include="form_ListadoAlumno.Designer.cs">
+      <DependentUpon>form_ListadoAlumno.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
@@ -129,11 +153,23 @@
     <Compile Include="form_MantenimientoCatedratico.Designer.cs">
       <DependentUpon>form_MantenimientoCatedratico.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_MantenimientoEdificio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_MantenimientoEdificio.Designer.cs">
+      <DependentUpon>form_MantenimientoEdificio.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_MantenimientoFacultad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_MantenimientoFacultad.Designer.cs">
       <DependentUpon>form_MantenimientoFacultad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_MantenimientoSalon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_MantenimientoSalon.Designer.cs">
+      <DependentUpon>form_MantenimientoSalon.cs</DependentUpon>
     </Compile>
     <Compile Include="form_MantenimientosAlumno.cs">
       <SubType>Form</SubType>
@@ -171,11 +207,23 @@
     <Compile Include="form_ModificarCatedratico.Designer.cs">
       <DependentUpon>form_ModificarCatedratico.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_ModificarEdificio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_ModificarEdificio.Designer.cs">
+      <DependentUpon>form_ModificarEdificio.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_ModificarPensum.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_ModificarPensum.Designer.cs">
       <DependentUpon>form_ModificarPensum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_ModificarSalon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_ModificarSalon.Designer.cs">
+      <DependentUpon>form_ModificarSalon.cs</DependentUpon>
     </Compile>
     <Compile Include="form_modificar_facultad.cs">
       <SubType>Form</SubType>
@@ -203,11 +251,23 @@
     <EmbeddedResource Include="form_AsignarCated.resx">
       <DependentUpon>form_AsignarCated.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form_Bitacora.resx">
+      <DependentUpon>form_Bitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_CambiarContraseña.resx">
+      <DependentUpon>form_CambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_cat.resx">
       <DependentUpon>form_cat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_CertificacionDeCursos.resx">
       <DependentUpon>form_CertificacionDeCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_comprobacion.resx">
+      <DependentUpon>form_comprobacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_CrearCuenta.resx">
+      <DependentUpon>form_CrearCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_cursosact.resx">
       <DependentUpon>form_cursosact.cs</DependentUpon>
@@ -215,8 +275,8 @@
     <EmbeddedResource Include="form_historial.resx">
       <DependentUpon>form_historial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_ListAlumnoPorSeccion.resx">
-      <DependentUpon>form_ListAlumnoPorSeccion.cs</DependentUpon>
+    <EmbeddedResource Include="form_ListadoAlumno.resx">
+      <DependentUpon>form_ListadoAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -227,8 +287,14 @@
     <EmbeddedResource Include="form_MantenimientoCatedratico.resx">
       <DependentUpon>form_MantenimientoCatedratico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form_MantenimientoEdificio.resx">
+      <DependentUpon>form_MantenimientoEdificio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_MantenimientoFacultad.resx">
       <DependentUpon>form_MantenimientoFacultad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_MantenimientoSalon.resx">
+      <DependentUpon>form_MantenimientoSalon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_MantenimientosAlumno.resx">
       <DependentUpon>form_MantenimientosAlumno.cs</DependentUpon>
@@ -248,8 +314,14 @@
     <EmbeddedResource Include="form_ModificarCatedratico.resx">
       <DependentUpon>form_ModificarCatedratico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form_ModificarEdificio.resx">
+      <DependentUpon>form_ModificarEdificio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_ModificarPensum.resx">
       <DependentUpon>form_ModificarPensum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_ModificarSalon.resx">
+      <DependentUpon>form_ModificarSalon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_modificar_facultad.resx">
       <DependentUpon>form_modificar_facultad.cs</DependentUpon>

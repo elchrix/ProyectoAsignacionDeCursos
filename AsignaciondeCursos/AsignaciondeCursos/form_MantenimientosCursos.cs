@@ -63,7 +63,7 @@ namespace AsignaciondeCursos
             try
             {
                 int resultado = MantenimientosManejo.agregarcurso(cbo_cod_carrera.SelectedItem.ToString().Trim(), txt_cod_curso.Text.Trim(), cbo_numero.Text.Trim(), cbo_numero_ciclos.Text.Trim(), txt_no_creditos.Text.Trim(), cbo_laboratorio.SelectedItem.ToString().Trim(), txt_prerrequisitos.Text.Trim(), txt_creditos_necesarios.Text.Trim(), txt_nombre_curso.Text.Trim(), cbo_pensum.SelectedItem.ToString().Trim());
-                MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Cursos" + cbo_cod_carrera.SelectedItem.ToString().Trim() + txt_cod_curso.Text.Trim() + cbo_numero.Text.Trim() + cbo_numero_ciclos.Text.Trim() + txt_no_creditos.Text.Trim() + cbo_laboratorio.SelectedItem.ToString().Trim() + txt_prerrequisitos.Text.Trim() + txt_creditos_necesarios.Text.Trim() + txt_nombre_curso.Text.Trim() + cbo_pensum.SelectedItem.ToString().Trim());
+                MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Cursos " + cbo_cod_carrera.SelectedItem.ToString().Trim() +" - "+ txt_cod_curso.Text.Trim() +" - "+ cbo_numero.Text.Trim() +" - "+ cbo_numero_ciclos.Text.Trim() +" - "+ txt_no_creditos.Text.Trim() +" - "+ cbo_laboratorio.SelectedItem.ToString().Trim() +" - "+ txt_prerrequisitos.Text.Trim() +" - "+ txt_creditos_necesarios.Text.Trim() +" - "+ txt_nombre_curso.Text.Trim() +" - "+ cbo_pensum.SelectedItem.ToString().Trim());
 
                 if (resultado > 0)
                 {
@@ -104,7 +104,7 @@ namespace AsignaciondeCursos
                     MySqlDataAdapter ad = new MySqlDataAdapter(cmd);
                     ad.Fill(dtd);
                     dgv_curso.DataSource = dtd;
-                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Cursos" + sCarrera + sCod_curso);
+                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Cursos " + sCarrera + sCod_curso);
                 }
                 con.Close();
             }

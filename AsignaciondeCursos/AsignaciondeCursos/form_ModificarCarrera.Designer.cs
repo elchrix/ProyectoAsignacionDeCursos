@@ -50,11 +50,10 @@
             this.groupBox1.Controls.Add(this.txt_nombre_carrera);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btn_modificar);
             this.groupBox1.Controls.Add(this.txt_carrera);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(22, 81);
+            this.groupBox1.Location = new System.Drawing.Point(24, 93);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -131,10 +130,10 @@
             // 
             // btn_modificar
             // 
-            this.btn_modificar.Location = new System.Drawing.Point(256, 89);
+            this.btn_modificar.Location = new System.Drawing.Point(280, 24);
             this.btn_modificar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(86, 28);
+            this.btn_modificar.Size = new System.Drawing.Size(65, 65);
             this.btn_modificar.TabIndex = 5;
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = true;
@@ -172,6 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 297);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_modificar);
             this.Name = "form_ModificarCarrera";
             this.Text = "form_ModificarCarrera";
             this.Load += new System.EventHandler(this.form_ModificarCarrera_Load);

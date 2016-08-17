@@ -57,7 +57,7 @@ namespace AsignaciondeCursos
 
 
             txt_nombrefacultad.Text = "";
-            MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Facultad" + txt_nombrefacultad.Text.Trim());
+            MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Facultad " + txt_nombrefacultad.Text.Trim());
 
             //txt_idfacultad.Text = (Convert.ToInt16(txt_idfacultad.Text) + 1).ToString();
 
@@ -91,7 +91,7 @@ namespace AsignaciondeCursos
 
                     comando.ExecuteNonQuery();
 
-                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Facultad" + txt_nombrefacultad.Text.Trim());
+                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Facultad " + txt_nombrefacultad.Text.Trim());
 
                     DataTable dtd = new DataTable();
                     string queryd = "select * from facultad";

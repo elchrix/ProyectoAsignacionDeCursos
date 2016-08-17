@@ -65,10 +65,10 @@
             // 
             // btn_modificar
             // 
-            this.btn_modificar.Location = new System.Drawing.Point(189, 121);
+            this.btn_modificar.Location = new System.Drawing.Point(257, 29);
             this.btn_modificar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(86, 28);
+            this.btn_modificar.Size = new System.Drawing.Size(65, 65);
             this.btn_modificar.TabIndex = 50;
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = true;
@@ -98,10 +98,9 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txt_nombrefacultad);
             this.groupBox1.Controls.Add(this.txt_idfacultad);
-            this.groupBox1.Controls.Add(this.btn_modificar);
-            this.groupBox1.Location = new System.Drawing.Point(57, 59);
+            this.groupBox1.Location = new System.Drawing.Point(77, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(415, 201);
+            this.groupBox1.Size = new System.Drawing.Size(415, 137);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modificar:";
@@ -110,8 +109,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 352);
+            this.ClientSize = new System.Drawing.Size(606, 265);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_modificar);
             this.Name = "form_modificar_facultad";
             this.Text = "form_modificar_facultad";
             this.groupBox1.ResumeLayout(false);

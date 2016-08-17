@@ -46,10 +46,10 @@
             // 
             // btn_eliminar
             // 
-            this.btn_eliminar.Location = new System.Drawing.Point(610, 323);
+            this.btn_eliminar.Location = new System.Drawing.Point(359, 30);
             this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(86, 32);
+            this.btn_eliminar.Size = new System.Drawing.Size(65, 65);
             this.btn_eliminar.TabIndex = 44;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             this.dgv_pensum.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_pensum.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_pensum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_pensum.Location = new System.Drawing.Point(14, 200);
+            this.dgv_pensum.Location = new System.Drawing.Point(60, 201);
             this.dgv_pensum.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_pensum.Name = "dgv_pensum";
             this.dgv_pensum.RowTemplate.Height = 24;
@@ -74,11 +74,11 @@
             this.groupBox3.Controls.Add(this.txt_anio);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Location = new System.Drawing.Point(14, 54);
+            this.groupBox3.Location = new System.Drawing.Point(60, 114);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(581, 129);
+            this.groupBox3.Size = new System.Drawing.Size(581, 83);
             this.groupBox3.TabIndex = 45;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pensum";
@@ -87,7 +87,7 @@
             // 
             this.cbo_idcarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_idcarrera.FormattingEnabled = true;
-            this.cbo_idcarrera.Location = new System.Drawing.Point(148, 48);
+            this.cbo_idcarrera.Location = new System.Drawing.Point(148, 42);
             this.cbo_idcarrera.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_idcarrera.Name = "cbo_idcarrera";
             this.cbo_idcarrera.Size = new System.Drawing.Size(204, 21);
@@ -96,7 +96,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(76, 50);
+            this.label9.Location = new System.Drawing.Point(76, 44);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 13);
             this.label9.TabIndex = 26;
@@ -104,7 +104,7 @@
             // 
             // txt_anio
             // 
-            this.txt_anio.Location = new System.Drawing.Point(357, 50);
+            this.txt_anio.Location = new System.Drawing.Point(357, 44);
             this.txt_anio.Name = "txt_anio";
             this.txt_anio.Size = new System.Drawing.Size(75, 20);
             this.txt_anio.TabIndex = 2;
@@ -112,7 +112,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(354, 28);
+            this.label10.Location = new System.Drawing.Point(354, 22);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 13);
             this.label10.TabIndex = 22;
@@ -121,7 +121,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(163, 28);
+            this.label11.Location = new System.Drawing.Point(163, 22);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 21;
@@ -129,10 +129,10 @@
             // 
             // btn_ingresar
             // 
-            this.btn_ingresar.Location = new System.Drawing.Point(610, 113);
+            this.btn_ingresar.Location = new System.Drawing.Point(200, 30);
             this.btn_ingresar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ingresar.Name = "btn_ingresar";
-            this.btn_ingresar.Size = new System.Drawing.Size(86, 28);
+            this.btn_ingresar.Size = new System.Drawing.Size(65, 65);
             this.btn_ingresar.TabIndex = 3;
             this.btn_ingresar.Text = "Ingresar";
             this.btn_ingresar.UseVisualStyleBackColor = true;
@@ -140,9 +140,9 @@
             // 
             // btn_modificar
             // 
-            this.btn_modificar.Location = new System.Drawing.Point(610, 265);
+            this.btn_modificar.Location = new System.Drawing.Point(279, 30);
             this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(79, 31);
+            this.btn_modificar.Size = new System.Drawing.Size(65, 65);
             this.btn_modificar.TabIndex = 47;
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = true;
@@ -151,9 +151,9 @@
             // btn_actualizar
             // 
             this.btn_actualizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_actualizar.Image")));
-            this.btn_actualizar.Location = new System.Drawing.Point(14, 407);
+            this.btn_actualizar.Location = new System.Drawing.Point(434, 30);
             this.btn_actualizar.Name = "btn_actualizar";
-            this.btn_actualizar.Size = new System.Drawing.Size(58, 28);
+            this.btn_actualizar.Size = new System.Drawing.Size(65, 65);
             this.btn_actualizar.TabIndex = 48;
             this.btn_actualizar.UseVisualStyleBackColor = true;
             this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);

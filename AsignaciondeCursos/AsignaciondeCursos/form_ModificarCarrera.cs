@@ -48,7 +48,7 @@ namespace AsignaciondeCursos
 
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Modificación exitosa");
-                MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Carrera" + txt_carrera.Text.Trim() + cbo_id__facultad.SelectedValue.ToString().Trim());
+                MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Carrera " + txt_carrera.Text.Trim() +" - "+ cbo_id__facultad.SelectedValue.ToString().Trim());
 
                 con.Close();
                 this.Close();

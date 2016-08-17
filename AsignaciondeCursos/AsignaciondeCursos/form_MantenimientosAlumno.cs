@@ -68,7 +68,7 @@ namespace AsignaciondeCursos
                     MessageBox.Show("No se pudo Ingresar");
                 }
 
-                MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Alumno" + cbo_carrera.SelectedValue.ToString().Trim() + txt_anio.Text.Trim() + txt_carne.Text.Trim() + txt_nombre1a.Text.Trim() + txt_nombre2a.Text.Trim() + txt_apellido1a.Text.Trim() + txt_apellido2a.Text.Trim() + txt_correoa.Text.Trim() + txt_direcciona.Text.Trim() + dtp_nac_alumno.Text.Trim() + cbo_pensum.Text.Trim());
+                MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Alumno" + cbo_carrera.SelectedValue.ToString().Trim() +" - "+ txt_anio.Text.Trim() +" - "+ txt_carne.Text.Trim() +" - "+ txt_nombre1a.Text.Trim() +" - "+ txt_nombre2a.Text.Trim() +" - "+ txt_apellido1a.Text.Trim() +" - "+ txt_apellido2a.Text.Trim() +" - "+ txt_correoa.Text.Trim() +" - "+ txt_direcciona.Text.Trim() +" - "+ dtp_nac_alumno.Text.Trim() +" - "+ cbo_pensum.Text.Trim());
             }
             catch(System.Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -201,7 +201,7 @@ namespace AsignaciondeCursos
                     comando.ExecuteNonQuery();
                     MessageBox.Show("Eliminado exitoso");
                     actualizar();
-                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Alumno" + cbo_carrera.SelectedValue.ToString().Trim() + txt_anio.Text.Trim() + txt_carne.Text.Trim() + txt_nombre1a.Text.Trim() + txt_nombre2a.Text.Trim() + txt_apellido1a.Text.Trim() + txt_apellido2a.Text.Trim() + txt_correoa.Text.Trim() + txt_direcciona.Text.Trim() + dtp_nac_alumno.Text.Trim() + cbo_pensum.Text.Trim());
+                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Alumno " + cbo_carrera.SelectedValue.ToString().Trim() +" - "+ txt_anio.Text.Trim() +" - "+ txt_carne.Text.Trim() +" - "+ txt_nombre1a.Text.Trim() +" - "+ txt_nombre2a.Text.Trim() +" - "+ txt_apellido1a.Text.Trim() +" - "+ txt_apellido2a.Text.Trim() +" - "+ txt_correoa.Text.Trim() +" - "+ txt_direcciona.Text.Trim() +" - "+ dtp_nac_alumno.Text.Trim() +" - "+ cbo_pensum.Text.Trim());
                 }
                 catch { MessageBox.Show("Imposible eliminar"); }
             }
@@ -217,6 +217,16 @@ namespace AsignaciondeCursos
         private void btn_actualizar_Click(object sender, EventArgs e)
         {
             actualizar();
+        }
+
+        private void txt_carne_MouseCaptureChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_carne_AcceptsTabChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show("hola");
         }
     }
 }

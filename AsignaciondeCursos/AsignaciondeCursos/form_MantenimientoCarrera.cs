@@ -66,7 +66,7 @@ namespace AsignaciondeCursos
             txt_nombrecarrera.Text = "";
             cbo_ciclos.SelectedIndex = -1;
             txt_idcarrera.Text = "";
-            MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Carrera" + txt_idcarrera.Text.Trim() + cbo_idfacultad.SelectedValue.ToString().Trim());
+            MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Carrera " + txt_idcarrera.Text.Trim() +" - "+ cbo_idfacultad.SelectedValue.ToString().Trim());
 
             //  txt_idcarrera.Text = (Convert.ToInt16(txt_idcarrera.Text) + 1).ToString();
 
@@ -113,7 +113,7 @@ namespace AsignaciondeCursos
                     comando.ExecuteNonQuery();
 
 
-                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Carrera" + txt_idcarrera.Text.Trim() + cbo_idfacultad.SelectedValue.ToString().Trim());
+                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Carrera " + txt_idcarrera.Text.Trim() +" - "+ cbo_idfacultad.SelectedValue.ToString().Trim());
 
                     DataTable dtd = new DataTable();
                     string queryd = "select c.id_carrera, c.nombre_carrera, c.ciclos, f.nombre_facultad from Carrera c, Facultad f where c.id_facultad = f.id_facultad";

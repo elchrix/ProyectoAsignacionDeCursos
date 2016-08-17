@@ -71,7 +71,7 @@ namespace AsignaciondeCursos
                 }
                 txt_anio.Text = "";
 
-            MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Pensum" + cbo_idcarrera.SelectedValue.ToString().Trim() + txt_anio.Text.Trim());
+            MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Pensum " + cbo_idcarrera.SelectedValue.ToString().Trim() +" - "+ txt_anio.Text.Trim());
 
 
 
@@ -119,7 +119,7 @@ namespace AsignaciondeCursos
 
 
                     comando.ExecuteNonQuery();
-                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Pensum" + cbo_idcarrera.SelectedValue.ToString().Trim() + txt_anio.Text.Trim());
+                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Pensum " + cbo_idcarrera.SelectedValue.ToString().Trim() +" - "+ txt_anio.Text.Trim());
                     DataTable dt = MantenimientosManejo.CargarGrid("select p.id_carrera, p.anio_pensum, c.nombre_carrera from pensum p, carrera c where p.id_carrera = c.id_carrera");
                     dgv_pensum.DataSource = dt;
                 }

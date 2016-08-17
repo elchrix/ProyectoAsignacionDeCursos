@@ -56,7 +56,7 @@ namespace AsignaciondeCursos
                 comando.ExecuteNonQuery();
                 //MySqlDataReader dr;
                 //dr = comando.ExecuteReader();
-                MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Pensum" + cbo_idcarrera.SelectedValue.ToString().Trim() + txt_anio.Text.Trim());
+                MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Pensum " + cbo_idcarrera.SelectedValue.ToString().Trim() +" - "+ txt_anio.Text.Trim());
                 MessageBox.Show("Modificacion exitosa");
 
                 con.Close();

@@ -23,19 +23,27 @@ namespace AsignaciondeCursos
 
         private void btn_VistaPrevia_Click(object sender, EventArgs e)
         {
+            String id_carrera = txt_carrera.Text.Trim();
+            String id_anioingreso = txt_anio.Text.Trim();
+            String uid = txt_uid.Text.Trim();
+            String ruta = "";
+            ruta = "repo.pdf";
+            Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta, FileMode.Create));
+            DocumentoPensum.Open();
             try
             {
 
-                String id_carrera = txt_carrera.Text.Trim();
-                String id_anioingreso = txt_anio.Text.Trim();
-                String uid = txt_uid.Text.Trim();
+                //String id_carrera = txt_carrera.Text.Trim();
+                //String id_anioingreso = txt_anio.Text.Trim();
+                //String uid = txt_uid.Text.Trim();
 
-                String ruta = "";
-                ruta = @"C:\Users\Marvin\Documents\UltimoCertificado.pdf";
+                //String ruta = "";
+                //ruta = "repo.pdf";
 
-                Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-                PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta, FileMode.Create));
-                DocumentoPensum.Open();
+                //Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+                //PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta, FileMode.Create));
+                //DocumentoPensum.Open();
                 // ---------------------- la hoja de de PDF tiene un ancho de 600 
                 //------------------------ LOGO UNIVERSIDAD 
                 iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("logo2.jpg");
@@ -63,7 +71,7 @@ namespace AsignaciondeCursos
                 MySqlConnection conex = Conexion.ObtenerConexion();
                 DataTable cargadt = new DataTable();
 
-                MySqlCommand cmd = new MySqlCommand("select nombre_carrera from Carrera where id_carrera =" + dgv_muestra.Rows[0].Cells["id_carrera"].Value.ToString(), conex);
+                MySqlCommand cmd = new MySqlCommand("select nombre_carrera from carrera where id_carrera =" + dgv_muestra.Rows[0].Cells["id_carrera"].Value.ToString(), conex);
                 MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
                 adap.Fill(cargadt);
                 DataRow row = cargadt.Rows[0];
@@ -72,7 +80,7 @@ namespace AsignaciondeCursos
 
 
 
-                Paragraph encabezado = new Paragraph(new Phrase("\n UNIVERSIDAD COMPLUTENSE DE MADRID \n" + "", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 15f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+                Paragraph encabezado = new Paragraph(new Phrase("\n UNIVERSIDAD JOHNNY CALITO FLORES \n" + "", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 15f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
                 encabezado.Alignment = Element.ALIGN_CENTER;
                 DocumentoPensum.Add(encabezado);
 
@@ -101,10 +109,26 @@ namespace AsignaciondeCursos
                 DocumentoPensum.Close(); // se cierra el documento una ves realizados los cambios  cambios
 
                 System.Diagnostics.Process.Start(ruta); // el documento PDF se ejecuta automaticamente para que no se haga el doble cli
+        }
+            catch
+            {
+                DocumentoPensum.Close();
+                MessageBox.Show("No hay datos del alumno a certificar");    
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+}
+
+        private void form_CertificacionDeCursos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_uid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btn_VistaPrevia.PerformClick();
             }
+
         }
     }
 }

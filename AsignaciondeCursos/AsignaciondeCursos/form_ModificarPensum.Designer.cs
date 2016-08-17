@@ -42,11 +42,10 @@
             // 
             this.groupBox3.Controls.Add(this.cbo_idcarrera);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.btn_modificar);
             this.groupBox3.Controls.Add(this.txt_anio);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Location = new System.Drawing.Point(30, 45);
+            this.groupBox3.Location = new System.Drawing.Point(30, 105);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -77,10 +76,10 @@
             // 
             // btn_modificar
             // 
-            this.btn_modificar.Location = new System.Drawing.Point(244, 88);
+            this.btn_modificar.Location = new System.Drawing.Point(286, 36);
             this.btn_modificar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(86, 28);
+            this.btn_modificar.Size = new System.Drawing.Size(65, 65);
             this.btn_modificar.TabIndex = 3;
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = true;
@@ -115,8 +114,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 225);
+            this.ClientSize = new System.Drawing.Size(636, 261);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.btn_modificar);
             this.Name = "form_ModificarPensum";
             this.Text = "form_ModificarPensum";
             this.Load += new System.EventHandler(this.form_ModificarPensum_Load);

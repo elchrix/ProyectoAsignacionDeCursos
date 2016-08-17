@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 30);
+            this.label1.Location = new System.Drawing.Point(158, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(312, 24);
             this.label1.TabIndex = 0;
@@ -72,6 +72,7 @@
             this.txt_uid.Name = "txt_uid";
             this.txt_uid.Size = new System.Drawing.Size(100, 20);
             this.txt_uid.TabIndex = 3;
+            this.txt_uid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_uid_KeyPress);
             // 
             // label2
             // 
@@ -110,9 +111,9 @@
             // 
             // btn_VistaPrevia
             // 
-            this.btn_VistaPrevia.Location = new System.Drawing.Point(232, 201);
+            this.btn_VistaPrevia.Location = new System.Drawing.Point(263, 12);
             this.btn_VistaPrevia.Name = "btn_VistaPrevia";
-            this.btn_VistaPrevia.Size = new System.Drawing.Size(99, 43);
+            this.btn_VistaPrevia.Size = new System.Drawing.Size(65, 65);
             this.btn_VistaPrevia.TabIndex = 5;
             this.btn_VistaPrevia.Text = "Vista Previa";
             this.btn_VistaPrevia.UseVisualStyleBackColor = true;
@@ -126,7 +127,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 72);
+            this.groupBox1.Location = new System.Drawing.Point(23, 146);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(532, 100);
             this.groupBox1.TabIndex = 9;
@@ -144,6 +145,7 @@
             this.Controls.Add(this.label1);
             this.Name = "form_CertificacionDeCursos";
             this.Text = "Certificado de Cursos";
+            this.Load += new System.EventHandler(this.form_CertificacionDeCursos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_muestra)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -147,23 +147,31 @@ namespace AsignaciondeCursos
 
         private void btn_vistaprevia_Click(object sender, EventArgs e)
         {
-             id_facultad= cbo_facultad.SelectedValue.ToString().Trim();
-             id_carrera = cbo_carrera.SelectedValue.ToString().Trim();
-             anio_pensum = cbo_pensum.SelectedValue.ToString().Trim();
-            if ( id_facultad == "<<Seleccione una carrera>>" ||  id_carrera== "<<Seleccione un valor>>" ||  anio_pensum== "<<Selecione un año>>")
+            try { 
+            id_facultad = cbo_facultad.SelectedValue.ToString().Trim();
+            id_carrera = cbo_carrera.SelectedValue.ToString().Trim();
+            anio_pensum = cbo_pensum.SelectedValue.ToString().Trim();
+
+            String ruta = "";
+            ruta = "repo7";
+            Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta + "pensum.pdf", FileMode.Create));
+            DocumentoPensum.Open();
+
+            if (id_facultad == "<<Seleccione una carrera>>" || id_carrera == "<<Seleccione un valor>>" || anio_pensum == "<<Selecione un año>>")
             {
                 MessageBox.Show("Uno o más campos están vacios");
             }
             else
-            { 
+            {
                 try
                 {
-                    String ruta = "";
-                    ruta = @"C:\Users\Marvin\Documents\PensumsGenerados";
+                    //String ruta = "";
+                    //ruta = @"C:\Users\Marvin\Documents\PensumsGenerados";
 
-                    Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-                    PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta + "pensum.pdf", FileMode.Create));
-                    DocumentoPensum.Open();
+                    //Document DocumentoPensum = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+                    //PdfWriter nombre_doc = PdfWriter.GetInstance(DocumentoPensum, new FileStream(ruta + "pensum.pdf", FileMode.Create));
+                    //DocumentoPensum.Open();
                     // ---------------------- la hoja de de PDF tiene un ancho de 600 
                     //------------------------ LOGO UNIVERSIDAD 
                     iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("logo2.jpg");
@@ -293,12 +301,16 @@ namespace AsignaciondeCursos
                 }
                 catch (Exception ex)
                 {
+                    DocumentoPensum.Close();
                     MessageBox.Show(ex.Message);
                 }
             }
-            
 
 
+            //{
+
+        }
+             catch (System.Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

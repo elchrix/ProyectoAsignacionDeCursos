@@ -37,7 +37,7 @@ namespace AsignaciondeCursos
                 comando.ExecuteNonQuery();
                 //MySqlDataReader dr;
                 //dr = comando.ExecuteReader();
-                MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Facultad" + txt_nombrefacultad.Text.Trim());
+                MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Facultad " + txt_nombrefacultad.Text.Trim());
                 MessageBox.Show("Modificacion exitosa");
                
                 con.Close();

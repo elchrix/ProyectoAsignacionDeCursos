@@ -35,30 +35,57 @@ namespace AsignaciondeCursos
 
         private void btn_insertar_Click(object sender, EventArgs e)
         {
-            dtp_fechaNacCto.Format = DateTimePickerFormat.Custom;
-            dtp_fechaNacCto.CustomFormat = "yyyy-MM-dd";
-            int resultado = MantenimientosManejo.CatedraticoAgregar(txt_nombre1Cto.Text.Trim(), txt_nombre2Cto.Text.Trim(), txt_apellido1Cto.Text.Trim(), txt_apellido2Cto.Text.Trim(), txt_direccionCto.Text.Trim(), txt_correoCto.Text.Trim(), dtp_fechaNacCto.Text.Trim());
-            if (resultado > 0)
+            try
             {
-                MessageBox.Show("Se Ingreso Exitosamente");
-                //con.mostrar();
-                DataTable dt = MantenimientosManejo.CargarGrid("select * from catedratico");
-                dgv_catedraticos.DataSource = dt;
+                if (!String.IsNullOrEmpty(txt_nombre1Cto.Text) && !String.IsNullOrEmpty(txt_apellido1Cto.Text) ) {
+                    dtp_fechaNacCto.Format = DateTimePickerFormat.Custom;
+                    dtp_fechaNacCto.CustomFormat = "yyyy-MM-dd";
 
-                txt_nombre1Cto.Text = "";
-                txt_nombre2Cto.Text = "";
-                txt_apellido1Cto.Text = "";
-                txt_apellido2Cto.Text = "";
-                txt_direccionCto.Text = "";
-                txt_correoCto.Text = "";
+                    int resultado = MantenimientosManejo.CatedraticoAgregar(txt_nombre1Cto.Text.Trim(), txt_nombre2Cto.Text.Trim(), txt_apellido1Cto.Text.Trim(), txt_apellido2Cto.Text.Trim(), txt_direccionCto.Text.Trim(), txt_correoCto.Text.Trim(), dtp_fechaNacCto.Text.Trim());
 
-                MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Catedratico" + txt_nombre1Cto.Text.Trim() + txt_nombre2Cto.Text.Trim() + txt_apellido1Cto.Text.Trim() + txt_apellido2Cto.Text.Trim() + txt_direccionCto.Text.Trim() + txt_correoCto.Text.Trim() + dtp_fechaNacCto.Text.Trim());
+                    //---------creación del usuario---------------
+                    DataTable dt2 = MantenimientosManejo.CargarGrid("select max(id_catedratico) from catedratico");
+                    DataRow row = dt2.Rows[0];
+                    String id_cat = row[0].ToString().Trim();
 
+                    char inicial = Convert.ToChar(txt_nombre1Cto.Text.Trim().Substring(0, 1));//primera letra 
+                    String apellido = txt_apellido1Cto.Text.Trim();
+                    String usuario = inicial + apellido + id_cat;
+                    String contraseña = inicial + apellido;
+                    MantenimientosManejo.UsuarioAgregar(usuario, contraseña, "catedratico");
+                    lbl_usuario.Text = usuario;
+                    //----------------------
+                    MySqlConnection con = Conexion.ObtenerConexion();
+                    MySqlCommand comando = new MySqlCommand("update catedratico set username = '" + usuario + "' where id_catedratico = '" + id_cat + "'", con);
+                    comando.ExecuteNonQuery();
+
+                    con.Close();
+
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Se Ingreso Exitosamente");
+                        //con.mostrar();
+                        DataTable dt = MantenimientosManejo.CargarGrid("select * from catedratico");
+                        dgv_catedraticos.DataSource = dt;
+
+                        txt_nombre1Cto.Text = "";
+                        txt_nombre2Cto.Text = "";
+                        txt_apellido1Cto.Text = "";
+                        txt_apellido2Cto.Text = "";
+                        txt_direccionCto.Text = "";
+                        txt_correoCto.Text = "";
+                        lbl_usuario.Text = "";
+                        MantenimientosManejo.InsertaBitacora(Usuario.UserName, "INSERT - Catedratico " + txt_nombre1Cto.Text.Trim() +" - "+ txt_nombre2Cto.Text.Trim() +" - "+ txt_apellido1Cto.Text.Trim() +" - "+ txt_apellido2Cto.Text.Trim() +" - "+ txt_direccionCto.Text.Trim() +" - "+ txt_correoCto.Text.Trim() +" - "+ dtp_fechaNacCto.Text.Trim());
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo realizar la insercion");
+                    }
+                }
+                else { MessageBox.Show("debe ingresar datos"); }
             }
-            else
-            {
-                MessageBox.Show("No se pudo realizar la insercion");
-            }
+            catch(System.Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
@@ -75,7 +102,7 @@ namespace AsignaciondeCursos
                     comando.ExecuteNonQuery();
                     DataTable dt = MantenimientosManejo.CargarGrid("select * from catedratico");
                     dgv_catedraticos.DataSource = dt;
-                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Catedratico" + txt_nombre1Cto.Text.Trim() + txt_nombre2Cto.Text.Trim() + txt_apellido1Cto.Text.Trim() + txt_apellido2Cto.Text.Trim() + txt_direccionCto.Text.Trim() + txt_correoCto.Text.Trim() + dtp_fechaNacCto.Text.Trim());
+                    MantenimientosManejo.EliminaBitacora(Usuario.UserName, "DELETE - Catedratico " + txt_nombre1Cto.Text.Trim() +" - "+ txt_nombre2Cto.Text.Trim() +" - "+ txt_apellido1Cto.Text.Trim() +" - "+ txt_apellido2Cto.Text.Trim() +" - "+ txt_direccionCto.Text.Trim() +" - "+ txt_correoCto.Text.Trim() +" - "+ dtp_fechaNacCto.Text.Trim());
 
                     con.Close();
                 }
@@ -125,6 +152,15 @@ namespace AsignaciondeCursos
             DataTable dt = MantenimientosManejo.CargarGrid("select * from catedratico");
             dgv_catedraticos.DataSource = dt;
             
+        }
+
+        private void dgv_catedraticos_Click(object sender, EventArgs e)
+        {
+            string id_catedra = Convert.ToString(dgv_catedraticos.CurrentRow.Cells[0].Value);
+            DataTable dt = MantenimientosManejo.CargarGrid("select username from catedratico where id_catedratico = '"+id_catedra+"'");
+            DataRow row = dt.Rows[0];
+            string usuario = row[0].ToString().Trim();
+            lbl_usuario.Text = usuario;
         }
     }
 }

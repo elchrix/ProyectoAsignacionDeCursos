@@ -33,7 +33,7 @@ namespace AsignaciondeCursos
                 //f.dgv_catedraticos.DataSource = dt;
                 MessageBox.Show("actualizado con exito");
                 //cn.mostrar();
-                MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Catedratico" + txt_nombre1Cto.Text.Trim() + txt_nombre2Cto.Text.Trim() + txt_apellido1Cto.Text.Trim() + txt_apellido2Cto.Text.Trim() + txt_direccionCto.Text.Trim() + txt_correoCto.Text.Trim() + dtp_fechaNacCto.Text.Trim());
+                MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Catedratico " + txt_nombre1Cto.Text.Trim() +" - "+ txt_nombre2Cto.Text.Trim() +" - "+ txt_apellido1Cto.Text.Trim() +" - "+ txt_apellido2Cto.Text.Trim() +" - "+ txt_direccionCto.Text.Trim() +" - "+ txt_correoCto.Text.Trim() +" - "+ dtp_fechaNacCto.Text.Trim());
 
                 con.Close();
                 

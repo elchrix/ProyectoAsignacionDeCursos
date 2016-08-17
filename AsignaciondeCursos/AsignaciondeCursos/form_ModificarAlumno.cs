@@ -58,7 +58,7 @@ namespace AsignaciondeCursos
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
             int resultado = MantenimientosManejo.AlumnoModificar(cbo_carrera.Text.Trim(), txt_anio.Text.Trim(), txt_carne.Text.Trim(), txt_nombre1a.Text.Trim(), txt_nombre2a.Text.Trim(), txt_apellido1a.Text.Trim(), txt_apellido2a.Text.Trim(), txt_correoa.Text.Trim(), txt_direcciona.Text.Trim(), dtp_nac_alumno.Text.Trim(), cbo_pensum.Text.Trim());
-            MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Alumno" + cbo_carrera.Text.Trim() + txt_anio.Text.Trim() + txt_carne.Text.Trim() + txt_nombre1a.Text.Trim() + txt_nombre2a.Text.Trim() + txt_apellido1a.Text.Trim() + txt_apellido2a.Text.Trim() + txt_correoa.Text.Trim() + txt_direcciona.Text.Trim() + dtp_nac_alumno.Text.Trim() + cbo_pensum.Text.Trim());
+            MantenimientosManejo.ModificaBitacora(Usuario.UserName, "UPDATE - Alumno " + cbo_carrera.Text.Trim() +" - "+ txt_anio.Text.Trim() +" - "+ txt_carne.Text.Trim() +" - "+ txt_nombre1a.Text.Trim() +" - "+ txt_nombre2a.Text.Trim() +" - "+ txt_apellido1a.Text.Trim() +" - "+ txt_apellido2a.Text.Trim() +" - "+ txt_correoa.Text.Trim() +" - "+ txt_direcciona.Text.Trim() +" - "+ dtp_nac_alumno.Text.Trim() +" - "+ cbo_pensum.Text.Trim());
             if (resultado == 0)
             {
                 MessageBox.Show("Agregada Exitosamente");

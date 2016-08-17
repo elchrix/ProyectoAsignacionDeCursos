@@ -10,7 +10,7 @@ namespace AsignaciondeCursos
     {
 
         private static string username;
-
+        private static string cat_id;
 
         public static string UserName
         {
@@ -21,6 +21,17 @@ namespace AsignaciondeCursos
             set
             {
                 username = value;
+            }
+        }
+        public static string Cate_id
+        {
+            get
+            {
+                return cat_id;
+            }
+            set
+            {
+                cat_id = value;
             }
         }
 

@@ -183,6 +183,25 @@ namespace AsignaciondeCursos
         }
 
 
+        public static int InsertarAsignacionCatedratico(String catedratico, String carrera, String cod_curso,String año, String semestre,String jornada, String seccion, String hora)
+        {
+            try
+            {
+                MySqlConnection con = Conexion.ObtenerConexion();
+
+                MySqlCommand cmd = new MySqlCommand(string.Format("insert into Catedratico_curso(id_catedratico, id_carrera, codigo_curso, anio, semestre, id_jornada, seccion, hora)" +
+                    " values('" + catedratico + "','" + carrera + "','" +cod_curso + "','" + año + "','" + semestre + "','" + jornada + "','" + seccion + "','" +hora+"')"), con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return 1;
+
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
 
 
 

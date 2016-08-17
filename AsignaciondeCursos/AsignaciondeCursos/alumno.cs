@@ -7,30 +7,27 @@ using System.Threading.Tasks;
  *Fecha de creaciòn: 10/08/2016
  *Autor: Yony C. Calito
  *MODULO CATEDRATICOS
- */
+ *UPDATA-- V.2.3 -- YC - G14/08
+ 
 namespace AsignaciondeCursos
 {
     public class alumno
     {
-        public string codigo { get; set; }
-        public string nombre { get; set; }
-        public string primer_apellido { get; set; }
-        public string segundo_apellidp { get; set; }
-        public string genero { get; set; }
-        public string fec_nac { get; set; }
-        public string nit { get; set; }
-        public string tel { get; set; }
-        public string telot { get; set; }
-        public string dir { get; set; }
-        public string dirot { get; set; }
-        public string email { get; set; }
-        public string emailot { get; set; }
+        public string id_carrera { get; set; }
+        public string codigo_curso { get; set; }
+        public string anio { get; set; }
+        public string semestre { get; set; }
+        public string seccion { get; set; }
+        public string jornada { get; set; }
+        public string anio_ingreso { get; set; }
+        public string no_carne { get; set; }
+        
 
 
         public alumno() { }
 
-        public alumno(string ccodigo, string cnom, string cpapellido, string csapellido, string cgen, string cfec, string cnit,
-                        string ctel, string ctelot, string cdir, string cdirot, string cemail, string cmailoto)
+        
+public alumno(string )
         {
             this.codigo = ccodigo;
             this.nombre = cnom;
@@ -49,5 +46,5 @@ namespace AsignaciondeCursos
 
     }
 }
-
+*/
 

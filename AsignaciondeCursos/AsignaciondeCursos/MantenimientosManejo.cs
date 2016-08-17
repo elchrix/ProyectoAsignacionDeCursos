@@ -35,7 +35,7 @@ namespace AsignaciondeCursos
             DataTable dt = new DataTable();
             MySqlCommand comando = new MySqlCommand(query, con);
             MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
-            adaptador.Fill(dt);
+            //adaptador.Fill(dt);
             con.Close();
             return dt;   
         }
@@ -49,7 +49,7 @@ namespace AsignaciondeCursos
                 //MySqlCommand cmd = new MySqlCommand(string.Format("update Alumno set id_carrera = '" + codCarne + "', anio_ingreso = '" + anio + "', no_carne = '" + carne + "', primer_nombre = '" + primer_noma + "', segundo_nombre = '" + segundo_noma + "', primer_apellido = '" + primer_apa + "', segundo_apellido = '" + segundo_apa + "', correo_electronico = '" + correoa + "', direccion = '" + direcciona +  "', anio_pensum = '" + anio_pensum + "' where id_carrera = '"+codCarne+"' and anio_ingreso = '"+anio+"' and no_carne='"+carne+"')"), con);
                 //devolver = cmd.ExecuteNonQuery();
                 //return devolver;
-                String cuery = "update Alumno set id_carrera = @id_carrera, año_ingreso = @anio_ingreso, no_carne = @no_carne, primer_nombre = @primer_nombre, segundo_nombre = @segundo_nombre, primer_apellido = @primer_apellido, segundo_apellido = @segundo_apellido, correo_electronico = @correo_electronico, direccion = @direccion, anio_pensum = @anio_pensum where id_carrera = '" + codCarne + "' and año_ingreso = '" + anio + "' and no_carne='" + carne +"' ";
+                String cuery = "update Alumno set id_carrera = @id_carrera, anio_ingreso = @anio_ingreso, no_carne = @no_carne, primer_nombre = @primer_nombre, segundo_nombre = @segundo_nombre, primer_apellido = @primer_apellido, segundo_apellido = @segundo_apellido, correo_electronico = @correo_electronico, direccion = @direccion, anio_pensum = @anio_pensum where id_carrera = '" + codCarne + "' and anio_ingreso = '" + anio + "' and no_carne='" + carne +"' ";
                 MySqlCommand comando = new MySqlCommand(cuery, con);
                 comando.Parameters.AddWithValue("@id_carrera", codCarne);
                 comando.Parameters.AddWithValue("@anio_ingreso", anio);
@@ -227,12 +227,32 @@ namespace AsignaciondeCursos
                 int devolver = 0;
                 MySqlCommand cmd = new MySqlCommand(string.Format("insert into Catedratico(id_catedratico, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, direccion, correo_electronico, fecha_nac) values( NULL ,'" + primer_nombre + "','" + segundo_nombre + "','" + primer_apellido + "','" + segundo_apellido + "','" + direccion + "','" + correo + "','" + fecha + "')"), con);
                 devolver = cmd.ExecuteNonQuery();
+                con.Close();
                 return devolver;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return 1;
+            }
+        }
+
+        public static int UsuarioAgregar(String usuario, String contraseña, String tipo)
+        {
+            try
+            {
+
+                MySqlConnection con = Conexion.ObtenerConexion();
+                int devolver = 1;
+                MySqlCommand cmd = new MySqlCommand(string.Format("insert into Usuario (username, tipo , password)values( '" + usuario + "','" + tipo + "','" + contraseña + "')"), con);
+                 cmd.ExecuteNonQuery();
+                con.Close();
+                return devolver;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
             }
         }
 
@@ -267,6 +287,51 @@ namespace AsignaciondeCursos
             MySqlCommand cmd = new MySqlCommand(string.Format("insert into bitacora(usuario,accion,hora_y_fecha) values( '" + encargado + "','" + accion + "', Sysdate() )"), con);
             cmd.ExecuteNonQuery();
             
+        }
+
+        public static int EdificioAgregar(String ID_Edificio, String No_pisos, String Tamanio, String Salones)
+        {
+            int devolver = 0;
+            MySqlConnection con = Conexion.ObtenerConexion();
+            MySqlCommand comando = new MySqlCommand(string.Format("insert into edificio(id_edificio,no_pisos,tamaño,cant_salones) values('" + ID_Edificio + "','" + No_pisos + "','" + Tamanio + "','" + Salones + "')"), con);
+            devolver = comando.ExecuteNonQuery();
+            return devolver;
+        }
+
+        public void llenar_saloncombobox(ComboBox cb)
+        {
+            try
+            {
+                MySqlConnection con = Conexion.ObtenerConexion();
+                MySqlCommand cdm;
+                MySqlDataReader dr;
+                cdm = new MySqlCommand("select id_edificio from edificio", con);
+                dr = cdm.ExecuteReader();
+                while (dr.Read())
+                {
+                    cb.Items.Add(dr["id_edificio"].ToString());
+                }
+                cb.SelectedIndex = 0;
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static int agregarsalon(String no_salon, String id_edificio, String tamaño, String capacidad_aprox)
+        {
+
+
+            int devolver = 0;
+            MySqlConnection con = Conexion.ObtenerConexion();
+
+            MySqlCommand comando = new MySqlCommand(string.Format("insert into salon(no_salon,id_edificio,tamaño,capacidad_aprox) values('" + no_salon + "','" + id_edificio + "','" + tamaño + "','" + capacidad_aprox + "')"), con);
+            devolver = comando.ExecuteNonQuery();
+            return devolver;
+
+
         }
 
 

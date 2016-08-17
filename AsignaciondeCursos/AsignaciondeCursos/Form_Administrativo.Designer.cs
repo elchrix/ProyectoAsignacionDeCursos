@@ -28,42 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Administrativo));
             this.spc_principal = new System.Windows.Forms.SplitContainer();
-            this.llbl_logout = new System.Windows.Forms.LinkLabel();
-            this.spc_reportes = new System.Windows.Forms.SplitContainer();
-            this.btn_MenuReportes = new System.Windows.Forms.Button();
-            this.llbl_pensum = new System.Windows.Forms.LinkLabel();
-            this.linkLabel14 = new System.Windows.Forms.LinkLabel();
-            this.llbl_alumno = new System.Windows.Forms.LinkLabel();
-            this.linkLabel13 = new System.Windows.Forms.LinkLabel();
             this.linkLabel12 = new System.Windows.Forms.LinkLabel();
-            this.spc_ingresos = new System.Windows.Forms.SplitContainer();
-            this.btn_MenuIngresos = new System.Windows.Forms.Button();
-            this.llbl_mant_cursos = new System.Windows.Forms.LinkLabel();
-            this.llbl_MantAlumno = new System.Windows.Forms.LinkLabel();
-            this.llbl_mant_catedratico = new System.Windows.Forms.LinkLabel();
-            this.llbl_mant_pensum = new System.Windows.Forms.LinkLabel();
-            this.llbl_carrera = new System.Windows.Forms.LinkLabel();
-            this.llbl_mant_facultad = new System.Windows.Forms.LinkLabel();
-            this.spc_asignaciones = new System.Windows.Forms.SplitContainer();
-            this.btn_MenuAsig = new System.Windows.Forms.Button();
-            this.llbl_AsignarCatedratico = new System.Windows.Forms.LinkLabel();
-            this.llbl_AsignarAlumno = new System.Windows.Forms.LinkLabel();
+            this.Barra_de_menus = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btn_asignar_alumno = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_asignar_catedratico = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btn_mant_alumno = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_mant_cursos = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_mant_cated = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_mant_carrera = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_mant_facu = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_mant_pensum = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_mant_edificio = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_mant_salon = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btn_cambiar_contra = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_crearcuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_cerrar_sesion = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_repo_cert = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_rep_alum = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_rep_pensum = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.spc_principal)).BeginInit();
             this.spc_principal.Panel1.SuspendLayout();
             this.spc_principal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spc_reportes)).BeginInit();
-            this.spc_reportes.Panel1.SuspendLayout();
-            this.spc_reportes.Panel2.SuspendLayout();
-            this.spc_reportes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spc_ingresos)).BeginInit();
-            this.spc_ingresos.Panel1.SuspendLayout();
-            this.spc_ingresos.Panel2.SuspendLayout();
-            this.spc_ingresos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spc_asignaciones)).BeginInit();
-            this.spc_asignaciones.Panel1.SuspendLayout();
-            this.spc_asignaciones.Panel2.SuspendLayout();
-            this.spc_asignaciones.SuspendLayout();
+            this.Barra_de_menus.SuspendLayout();
             this.SuspendLayout();
             // 
             // spc_principal
@@ -72,269 +64,213 @@
             this.spc_principal.IsSplitterFixed = true;
             this.spc_principal.Location = new System.Drawing.Point(0, 0);
             this.spc_principal.Name = "spc_principal";
+            this.spc_principal.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // spc_principal.Panel1
             // 
-            this.spc_principal.Panel1.Controls.Add(this.llbl_logout);
-            this.spc_principal.Panel1.Controls.Add(this.spc_reportes);
-            this.spc_principal.Panel1.Controls.Add(this.spc_ingresos);
-            this.spc_principal.Panel1.Controls.Add(this.spc_asignaciones);
-            this.spc_principal.Size = new System.Drawing.Size(1129, 555);
-            this.spc_principal.SplitterDistance = 225;
+            this.spc_principal.Panel1.Controls.Add(this.linkLabel12);
+            this.spc_principal.Panel1.Controls.Add(this.Barra_de_menus);
+            this.spc_principal.Size = new System.Drawing.Size(886, 555);
+            this.spc_principal.SplitterDistance = 25;
             this.spc_principal.TabIndex = 0;
-            // 
-            // llbl_logout
-            // 
-            this.llbl_logout.AutoSize = true;
-            this.llbl_logout.Location = new System.Drawing.Point(3, 515);
-            this.llbl_logout.Name = "llbl_logout";
-            this.llbl_logout.Size = new System.Drawing.Size(68, 13);
-            this.llbl_logout.TabIndex = 0;
-            this.llbl_logout.TabStop = true;
-            this.llbl_logout.Text = "Cerrar sesión";
-            this.llbl_logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_logout_LinkClicked);
-            // 
-            // spc_reportes
-            // 
-            this.spc_reportes.IsSplitterFixed = true;
-            this.spc_reportes.Location = new System.Drawing.Point(3, 334);
-            this.spc_reportes.Name = "spc_reportes";
-            this.spc_reportes.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // spc_reportes.Panel1
-            // 
-            this.spc_reportes.Panel1.Controls.Add(this.btn_MenuReportes);
-            // 
-            // spc_reportes.Panel2
-            // 
-            this.spc_reportes.Panel2.Controls.Add(this.llbl_pensum);
-            this.spc_reportes.Panel2.Controls.Add(this.linkLabel14);
-            this.spc_reportes.Panel2.Controls.Add(this.llbl_alumno);
-            this.spc_reportes.Panel2.Controls.Add(this.linkLabel13);
-            this.spc_reportes.Panel2.Controls.Add(this.linkLabel12);
-            this.spc_reportes.Size = new System.Drawing.Size(207, 178);
-            this.spc_reportes.SplitterDistance = 38;
-            this.spc_reportes.TabIndex = 4;
-            // 
-            // btn_MenuReportes
-            // 
-            this.btn_MenuReportes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_MenuReportes.Location = new System.Drawing.Point(0, 0);
-            this.btn_MenuReportes.Name = "btn_MenuReportes";
-            this.btn_MenuReportes.Size = new System.Drawing.Size(207, 38);
-            this.btn_MenuReportes.TabIndex = 4;
-            this.btn_MenuReportes.Text = "Reportes";
-            this.btn_MenuReportes.UseVisualStyleBackColor = true;
-            this.btn_MenuReportes.Click += new System.EventHandler(this.btn_MenuReportes_Click);
-            // 
-            // llbl_pensum
-            // 
-            this.llbl_pensum.AutoSize = true;
-            this.llbl_pensum.Location = new System.Drawing.Point(68, 10);
-            this.llbl_pensum.Name = "llbl_pensum";
-            this.llbl_pensum.Size = new System.Drawing.Size(45, 13);
-            this.llbl_pensum.TabIndex = 7;
-            this.llbl_pensum.TabStop = true;
-            this.llbl_pensum.Text = "Pensum";
-            this.llbl_pensum.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_pensum_LinkClicked);
-            // 
-            // linkLabel14
-            // 
-            this.linkLabel14.AutoSize = true;
-            this.linkLabel14.Location = new System.Drawing.Point(68, 102);
-            this.linkLabel14.Name = "linkLabel14";
-            this.linkLabel14.Size = new System.Drawing.Size(61, 13);
-            this.linkLabel14.TabIndex = 11;
-            this.linkLabel14.TabStop = true;
-            this.linkLabel14.Text = "linkLabel14";
-            // 
-            // llbl_alumno
-            // 
-            this.llbl_alumno.AutoSize = true;
-            this.llbl_alumno.Location = new System.Drawing.Point(68, 32);
-            this.llbl_alumno.Name = "llbl_alumno";
-            this.llbl_alumno.Size = new System.Drawing.Size(47, 13);
-            this.llbl_alumno.TabIndex = 8;
-            this.llbl_alumno.TabStop = true;
-            this.llbl_alumno.Text = "Alumnos";
-            // 
-            // linkLabel13
-            // 
-            this.linkLabel13.AutoSize = true;
-            this.linkLabel13.Location = new System.Drawing.Point(68, 78);
-            this.linkLabel13.Name = "linkLabel13";
-            this.linkLabel13.Size = new System.Drawing.Size(61, 13);
-            this.linkLabel13.TabIndex = 10;
-            this.linkLabel13.TabStop = true;
-            this.linkLabel13.Text = "linkLabel13";
             // 
             // linkLabel12
             // 
             this.linkLabel12.AutoSize = true;
-            this.linkLabel12.Location = new System.Drawing.Point(68, 54);
+            this.linkLabel12.Location = new System.Drawing.Point(704, 9);
             this.linkLabel12.Name = "linkLabel12";
-            this.linkLabel12.Size = new System.Drawing.Size(61, 13);
+            this.linkLabel12.Size = new System.Drawing.Size(46, 13);
             this.linkLabel12.TabIndex = 9;
             this.linkLabel12.TabStop = true;
-            this.linkLabel12.Text = "linkLabel12";
+            this.linkLabel12.Text = "Bitácora";
+            this.linkLabel12.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel12_LinkClicked);
             // 
-            // spc_ingresos
+            // Barra_de_menus
             // 
-            this.spc_ingresos.IsSplitterFixed = true;
-            this.spc_ingresos.Location = new System.Drawing.Point(3, 110);
-            this.spc_ingresos.Name = "spc_ingresos";
-            this.spc_ingresos.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.Barra_de_menus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1,
+            this.toolStripDropDownButton2,
+            this.toolStripDropDownButton3,
+            this.toolStripDropDownButton4});
+            this.Barra_de_menus.Location = new System.Drawing.Point(0, 0);
+            this.Barra_de_menus.Name = "Barra_de_menus";
+            this.Barra_de_menus.Size = new System.Drawing.Size(886, 25);
+            this.Barra_de_menus.TabIndex = 0;
+            this.Barra_de_menus.Text = "toolStrip1";
             // 
-            // spc_ingresos.Panel1
+            // toolStripDropDownButton1
             // 
-            this.spc_ingresos.Panel1.Controls.Add(this.btn_MenuIngresos);
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_asignar_alumno,
+            this.btn_asignar_catedratico});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(90, 22);
+            this.toolStripDropDownButton1.Text = "Asignaciones";
             // 
-            // spc_ingresos.Panel2
+            // btn_asignar_alumno
             // 
-            this.spc_ingresos.Panel2.Controls.Add(this.llbl_mant_cursos);
-            this.spc_ingresos.Panel2.Controls.Add(this.llbl_MantAlumno);
-            this.spc_ingresos.Panel2.Controls.Add(this.llbl_mant_catedratico);
-            this.spc_ingresos.Panel2.Controls.Add(this.llbl_mant_pensum);
-            this.spc_ingresos.Panel2.Controls.Add(this.llbl_carrera);
-            this.spc_ingresos.Panel2.Controls.Add(this.llbl_mant_facultad);
-            this.spc_ingresos.Size = new System.Drawing.Size(207, 218);
-            this.spc_ingresos.SplitterDistance = 43;
-            this.spc_ingresos.TabIndex = 3;
+            this.btn_asignar_alumno.Name = "btn_asignar_alumno";
+            this.btn_asignar_alumno.Size = new System.Drawing.Size(178, 22);
+            this.btn_asignar_alumno.Text = "Asignar Alumno";
+            this.btn_asignar_alumno.Click += new System.EventHandler(this.btn_asignar_alumno_Click);
             // 
-            // btn_MenuIngresos
+            // btn_asignar_catedratico
             // 
-            this.btn_MenuIngresos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_MenuIngresos.Location = new System.Drawing.Point(0, 0);
-            this.btn_MenuIngresos.Name = "btn_MenuIngresos";
-            this.btn_MenuIngresos.Size = new System.Drawing.Size(207, 43);
-            this.btn_MenuIngresos.TabIndex = 3;
-            this.btn_MenuIngresos.Text = "Mantenimientos";
-            this.btn_MenuIngresos.UseVisualStyleBackColor = true;
-            this.btn_MenuIngresos.Click += new System.EventHandler(this.btn_MenuIngresos_Click);
+            this.btn_asignar_catedratico.Name = "btn_asignar_catedratico";
+            this.btn_asignar_catedratico.Size = new System.Drawing.Size(178, 22);
+            this.btn_asignar_catedratico.Text = "Asignar Catedrático";
+            this.btn_asignar_catedratico.Click += new System.EventHandler(this.btn_asignar_catedratico_Click);
             // 
-            // llbl_mant_cursos
+            // toolStripDropDownButton2
             // 
-            this.llbl_mant_cursos.AutoSize = true;
-            this.llbl_mant_cursos.Location = new System.Drawing.Point(74, 32);
-            this.llbl_mant_cursos.Name = "llbl_mant_cursos";
-            this.llbl_mant_cursos.Size = new System.Drawing.Size(39, 13);
-            this.llbl_mant_cursos.TabIndex = 5;
-            this.llbl_mant_cursos.TabStop = true;
-            this.llbl_mant_cursos.Text = "Cursos";
-            this.llbl_mant_cursos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_mant_cursos_LinkClicked);
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_mant_alumno,
+            this.btn_mant_cursos,
+            this.btn_mant_cated,
+            this.btn_mant_carrera,
+            this.btn_mant_facu,
+            this.btn_mant_pensum,
+            this.btn_mant_edificio,
+            this.btn_mant_salon});
+            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(107, 22);
+            this.toolStripDropDownButton2.Text = "Mantenimientos";
             // 
-            // llbl_MantAlumno
+            // btn_mant_alumno
             // 
-            this.llbl_MantAlumno.AutoSize = true;
-            this.llbl_MantAlumno.Location = new System.Drawing.Point(74, 10);
-            this.llbl_MantAlumno.Name = "llbl_MantAlumno";
-            this.llbl_MantAlumno.Size = new System.Drawing.Size(42, 13);
-            this.llbl_MantAlumno.TabIndex = 0;
-            this.llbl_MantAlumno.TabStop = true;
-            this.llbl_MantAlumno.Text = "Alumno";
-            this.llbl_MantAlumno.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_MantAlumno_LinkClicked);
+            this.btn_mant_alumno.Name = "btn_mant_alumno";
+            this.btn_mant_alumno.Size = new System.Drawing.Size(135, 22);
+            this.btn_mant_alumno.Text = "Alumno";
+            this.btn_mant_alumno.Click += new System.EventHandler(this.btn_mant_alumno_Click);
             // 
-            // llbl_mant_catedratico
+            // btn_mant_cursos
             // 
-            this.llbl_mant_catedratico.AutoSize = true;
-            this.llbl_mant_catedratico.Location = new System.Drawing.Point(74, 54);
-            this.llbl_mant_catedratico.Name = "llbl_mant_catedratico";
-            this.llbl_mant_catedratico.Size = new System.Drawing.Size(61, 13);
-            this.llbl_mant_catedratico.TabIndex = 1;
-            this.llbl_mant_catedratico.TabStop = true;
-            this.llbl_mant_catedratico.Text = "Catedratico";
-            this.llbl_mant_catedratico.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_mant_catedratico_LinkClicked);
+            this.btn_mant_cursos.Name = "btn_mant_cursos";
+            this.btn_mant_cursos.Size = new System.Drawing.Size(135, 22);
+            this.btn_mant_cursos.Text = "Cursos";
+            this.btn_mant_cursos.Click += new System.EventHandler(this.btn_mant_cursos_Click);
             // 
-            // llbl_mant_pensum
+            // btn_mant_cated
             // 
-            this.llbl_mant_pensum.AutoSize = true;
-            this.llbl_mant_pensum.Location = new System.Drawing.Point(74, 122);
-            this.llbl_mant_pensum.Name = "llbl_mant_pensum";
-            this.llbl_mant_pensum.Size = new System.Drawing.Size(45, 13);
-            this.llbl_mant_pensum.TabIndex = 4;
-            this.llbl_mant_pensum.TabStop = true;
-            this.llbl_mant_pensum.Text = "Pensum";
-            this.llbl_mant_pensum.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_mant_pensum_LinkClicked);
+            this.btn_mant_cated.Name = "btn_mant_cated";
+            this.btn_mant_cated.Size = new System.Drawing.Size(135, 22);
+            this.btn_mant_cated.Text = "Catedrático";
+            this.btn_mant_cated.Click += new System.EventHandler(this.btn_mant_cated_Click);
             // 
-            // llbl_carrera
+            // btn_mant_carrera
             // 
-            this.llbl_carrera.AutoSize = true;
-            this.llbl_carrera.Location = new System.Drawing.Point(74, 77);
-            this.llbl_carrera.Name = "llbl_carrera";
-            this.llbl_carrera.Size = new System.Drawing.Size(41, 13);
-            this.llbl_carrera.TabIndex = 2;
-            this.llbl_carrera.TabStop = true;
-            this.llbl_carrera.Text = "Carrera";
-            this.llbl_carrera.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_carrera_LinkClicked);
+            this.btn_mant_carrera.Name = "btn_mant_carrera";
+            this.btn_mant_carrera.Size = new System.Drawing.Size(135, 22);
+            this.btn_mant_carrera.Text = "Carrera";
+            this.btn_mant_carrera.Click += new System.EventHandler(this.btn_mant_carrera_Click);
             // 
-            // llbl_mant_facultad
+            // btn_mant_facu
             // 
-            this.llbl_mant_facultad.AutoSize = true;
-            this.llbl_mant_facultad.Location = new System.Drawing.Point(74, 99);
-            this.llbl_mant_facultad.Name = "llbl_mant_facultad";
-            this.llbl_mant_facultad.Size = new System.Drawing.Size(48, 13);
-            this.llbl_mant_facultad.TabIndex = 3;
-            this.llbl_mant_facultad.TabStop = true;
-            this.llbl_mant_facultad.Text = "Facultad";
-            this.llbl_mant_facultad.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_mant_facultad_LinkClicked);
+            this.btn_mant_facu.Name = "btn_mant_facu";
+            this.btn_mant_facu.Size = new System.Drawing.Size(135, 22);
+            this.btn_mant_facu.Text = "Facultad";
+            this.btn_mant_facu.Click += new System.EventHandler(this.btn_mant_facu_Click);
             // 
-            // spc_asignaciones
+            // btn_mant_pensum
             // 
-            this.spc_asignaciones.IsSplitterFixed = true;
-            this.spc_asignaciones.Location = new System.Drawing.Point(3, 3);
-            this.spc_asignaciones.Name = "spc_asignaciones";
-            this.spc_asignaciones.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.btn_mant_pensum.Name = "btn_mant_pensum";
+            this.btn_mant_pensum.Size = new System.Drawing.Size(135, 22);
+            this.btn_mant_pensum.Text = "Pensum";
+            this.btn_mant_pensum.Click += new System.EventHandler(this.btn_mant_pensum_Click);
             // 
-            // spc_asignaciones.Panel1
+            // btn_mant_edificio
             // 
-            this.spc_asignaciones.Panel1.Controls.Add(this.btn_MenuAsig);
+            this.btn_mant_edificio.Name = "btn_mant_edificio";
+            this.btn_mant_edificio.Size = new System.Drawing.Size(135, 22);
+            this.btn_mant_edificio.Text = "Edificio";
+            this.btn_mant_edificio.Click += new System.EventHandler(this.btn_mant_edificio_Click);
             // 
-            // spc_asignaciones.Panel2
+            // btn_mant_salon
             // 
-            this.spc_asignaciones.Panel2.Controls.Add(this.llbl_AsignarCatedratico);
-            this.spc_asignaciones.Panel2.Controls.Add(this.llbl_AsignarAlumno);
-            this.spc_asignaciones.Size = new System.Drawing.Size(207, 101);
-            this.spc_asignaciones.SplitterDistance = 39;
-            this.spc_asignaciones.TabIndex = 2;
+            this.btn_mant_salon.Name = "btn_mant_salon";
+            this.btn_mant_salon.Size = new System.Drawing.Size(135, 22);
+            this.btn_mant_salon.Text = "Salón";
+            this.btn_mant_salon.Click += new System.EventHandler(this.btn_mant_salon_Click);
             // 
-            // btn_MenuAsig
+            // toolStripDropDownButton3
             // 
-            this.btn_MenuAsig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_MenuAsig.Location = new System.Drawing.Point(0, 0);
-            this.btn_MenuAsig.Name = "btn_MenuAsig";
-            this.btn_MenuAsig.Size = new System.Drawing.Size(207, 39);
-            this.btn_MenuAsig.TabIndex = 2;
-            this.btn_MenuAsig.Text = "Asignaciones";
-            this.btn_MenuAsig.UseVisualStyleBackColor = true;
-            this.btn_MenuAsig.Click += new System.EventHandler(this.btn_MenuAsig_Click);
+            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_repo_cert,
+            this.btn_rep_alum,
+            this.btn_rep_pensum});
+            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(66, 22);
+            this.toolStripDropDownButton3.Text = "Reportes";
             // 
-            // llbl_AsignarCatedratico
+            // toolStripDropDownButton4
             // 
-            this.llbl_AsignarCatedratico.AutoSize = true;
-            this.llbl_AsignarCatedratico.Location = new System.Drawing.Point(55, 31);
-            this.llbl_AsignarCatedratico.Name = "llbl_AsignarCatedratico";
-            this.llbl_AsignarCatedratico.Size = new System.Drawing.Size(99, 13);
-            this.llbl_AsignarCatedratico.TabIndex = 1;
-            this.llbl_AsignarCatedratico.TabStop = true;
-            this.llbl_AsignarCatedratico.Text = "Asignar Catedrático";
-            this.llbl_AsignarCatedratico.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_AsignarCatedratico_LinkClicked);
+            this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_cambiar_contra,
+            this.btn_crearcuenta,
+            this.btn_cerrar_sesion});
+            this.toolStripDropDownButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton4.Image")));
+            this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(63, 22);
+            this.toolStripDropDownButton4.Text = "Cuentas";
             // 
-            // llbl_AsignarAlumno
+            // btn_cambiar_contra
             // 
-            this.llbl_AsignarAlumno.AutoSize = true;
-            this.llbl_AsignarAlumno.Location = new System.Drawing.Point(68, 9);
-            this.llbl_AsignarAlumno.Name = "llbl_AsignarAlumno";
-            this.llbl_AsignarAlumno.Size = new System.Drawing.Size(80, 13);
-            this.llbl_AsignarAlumno.TabIndex = 0;
-            this.llbl_AsignarAlumno.TabStop = true;
-            this.llbl_AsignarAlumno.Text = "Asignar Alumno";
-            this.llbl_AsignarAlumno.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_AsignarAlumno_LinkClicked);
+            this.btn_cambiar_contra.Name = "btn_cambiar_contra";
+            this.btn_cambiar_contra.Size = new System.Drawing.Size(180, 22);
+            this.btn_cambiar_contra.Text = "Cambiar contraseña";
+            this.btn_cambiar_contra.Click += new System.EventHandler(this.btn_cambiar_contra_Click);
+            // 
+            // btn_crearcuenta
+            // 
+            this.btn_crearcuenta.Name = "btn_crearcuenta";
+            this.btn_crearcuenta.Size = new System.Drawing.Size(180, 22);
+            this.btn_crearcuenta.Text = "Crear cuenta nueva";
+            this.btn_crearcuenta.Click += new System.EventHandler(this.btn_crearcuenta_Click);
+            // 
+            // btn_cerrar_sesion
+            // 
+            this.btn_cerrar_sesion.Name = "btn_cerrar_sesion";
+            this.btn_cerrar_sesion.Size = new System.Drawing.Size(180, 22);
+            this.btn_cerrar_sesion.Text = "Cerrar sesión";
+            this.btn_cerrar_sesion.Click += new System.EventHandler(this.btn_cerrar_sesion_Click);
+            // 
+            // btn_repo_cert
+            // 
+            this.btn_repo_cert.Name = "btn_repo_cert";
+            this.btn_repo_cert.Size = new System.Drawing.Size(194, 22);
+            this.btn_repo_cert.Text = "Certificacion de cursos";
+            this.btn_repo_cert.Click += new System.EventHandler(this.btn_repo_cert_Click);
+            // 
+            // btn_rep_alum
+            // 
+            this.btn_rep_alum.Name = "btn_rep_alum";
+            this.btn_rep_alum.Size = new System.Drawing.Size(194, 22);
+            this.btn_rep_alum.Text = "Alumnos por sección";
+            this.btn_rep_alum.Click += new System.EventHandler(this.btn_rep_alum_Click);
+            // 
+            // btn_rep_pensum
+            // 
+            this.btn_rep_pensum.Name = "btn_rep_pensum";
+            this.btn_rep_pensum.Size = new System.Drawing.Size(194, 22);
+            this.btn_rep_pensum.Text = "Pensum";
+            this.btn_rep_pensum.Click += new System.EventHandler(this.btn_rep_pensum_Click);
             // 
             // Form_Administrativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 555);
+            this.ClientSize = new System.Drawing.Size(886, 555);
             this.Controls.Add(this.spc_principal);
             this.Name = "Form_Administrativo";
             this.Text = "Pantalla principal - Administrativo";
@@ -344,21 +280,8 @@
             this.spc_principal.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_principal)).EndInit();
             this.spc_principal.ResumeLayout(false);
-            this.spc_reportes.Panel1.ResumeLayout(false);
-            this.spc_reportes.Panel2.ResumeLayout(false);
-            this.spc_reportes.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spc_reportes)).EndInit();
-            this.spc_reportes.ResumeLayout(false);
-            this.spc_ingresos.Panel1.ResumeLayout(false);
-            this.spc_ingresos.Panel2.ResumeLayout(false);
-            this.spc_ingresos.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spc_ingresos)).EndInit();
-            this.spc_ingresos.ResumeLayout(false);
-            this.spc_asignaciones.Panel1.ResumeLayout(false);
-            this.spc_asignaciones.Panel2.ResumeLayout(false);
-            this.spc_asignaciones.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spc_asignaciones)).EndInit();
-            this.spc_asignaciones.ResumeLayout(false);
+            this.Barra_de_menus.ResumeLayout(false);
+            this.Barra_de_menus.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -366,26 +289,28 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer spc_principal;
-        private System.Windows.Forms.SplitContainer spc_reportes;
-        private System.Windows.Forms.SplitContainer spc_ingresos;
-        private System.Windows.Forms.SplitContainer spc_asignaciones;
-        private System.Windows.Forms.LinkLabel llbl_AsignarAlumno;
-        private System.Windows.Forms.LinkLabel llbl_AsignarCatedratico;
-        private System.Windows.Forms.Button btn_MenuReportes;
-        private System.Windows.Forms.Button btn_MenuIngresos;
-        private System.Windows.Forms.Button btn_MenuAsig;
-        private System.Windows.Forms.LinkLabel llbl_MantAlumno;
-        private System.Windows.Forms.LinkLabel llbl_mant_catedratico;
-        private System.Windows.Forms.LinkLabel llbl_carrera;
-        private System.Windows.Forms.LinkLabel llbl_mant_pensum;
-        private System.Windows.Forms.LinkLabel llbl_mant_facultad;
-        private System.Windows.Forms.LinkLabel llbl_pensum;
-        private System.Windows.Forms.LinkLabel linkLabel14;
-        private System.Windows.Forms.LinkLabel llbl_alumno;
-        private System.Windows.Forms.LinkLabel linkLabel13;
         private System.Windows.Forms.LinkLabel linkLabel12;
-        private System.Windows.Forms.LinkLabel llbl_mant_cursos;
-        private System.Windows.Forms.LinkLabel llbl_logout;
+        private System.Windows.Forms.ToolStrip Barra_de_menus;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem btn_asignar_alumno;
+        private System.Windows.Forms.ToolStripMenuItem btn_asignar_catedratico;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
+        private System.Windows.Forms.ToolStripMenuItem btn_mant_alumno;
+        private System.Windows.Forms.ToolStripMenuItem btn_mant_cursos;
+        private System.Windows.Forms.ToolStripMenuItem btn_mant_cated;
+        private System.Windows.Forms.ToolStripMenuItem btn_mant_carrera;
+        private System.Windows.Forms.ToolStripMenuItem btn_mant_facu;
+        private System.Windows.Forms.ToolStripMenuItem btn_mant_pensum;
+        private System.Windows.Forms.ToolStripMenuItem btn_mant_edificio;
+        private System.Windows.Forms.ToolStripMenuItem btn_mant_salon;
+        private System.Windows.Forms.ToolStripMenuItem btn_cambiar_contra;
+        private System.Windows.Forms.ToolStripMenuItem btn_crearcuenta;
+        private System.Windows.Forms.ToolStripMenuItem btn_cerrar_sesion;
+        private System.Windows.Forms.ToolStripMenuItem btn_repo_cert;
+        private System.Windows.Forms.ToolStripMenuItem btn_rep_alum;
+        private System.Windows.Forms.ToolStripMenuItem btn_rep_pensum;
     }
 }
 

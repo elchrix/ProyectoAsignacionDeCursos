@@ -40,7 +40,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 109);
+            this.dataGridView1.Location = new System.Drawing.Point(46, 187);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(580, 164);
             this.dataGridView1.TabIndex = 0;
@@ -56,7 +56,7 @@
             "2012",
             "2011",
             "2010"});
-            this.comboBox1.Location = new System.Drawing.Point(54, 63);
+            this.comboBox1.Location = new System.Drawing.Point(119, 147);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(177, 21);
             this.comboBox1.TabIndex = 1;
@@ -68,7 +68,7 @@
             this.comboBox2.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox2.Location = new System.Drawing.Point(262, 63);
+            this.comboBox2.Location = new System.Drawing.Point(327, 147);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(216, 21);
             this.comboBox2.TabIndex = 2;
@@ -77,7 +77,7 @@
             // lbl_anio
             // 
             this.lbl_anio.AutoSize = true;
-            this.lbl_anio.Location = new System.Drawing.Point(51, 47);
+            this.lbl_anio.Location = new System.Drawing.Point(116, 131);
             this.lbl_anio.Name = "lbl_anio";
             this.lbl_anio.Size = new System.Drawing.Size(26, 13);
             this.lbl_anio.TabIndex = 3;
@@ -86,7 +86,7 @@
             // lbl_sem
             // 
             this.lbl_sem.AutoSize = true;
-            this.lbl_sem.Location = new System.Drawing.Point(259, 47);
+            this.lbl_sem.Location = new System.Drawing.Point(324, 131);
             this.lbl_sem.Name = "lbl_sem";
             this.lbl_sem.Size = new System.Drawing.Size(51, 13);
             this.lbl_sem.TabIndex = 4;
@@ -94,9 +94,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(509, 41);
+            this.button1.Location = new System.Drawing.Point(286, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 42);
+            this.button1.Size = new System.Drawing.Size(65, 65);
             this.button1.TabIndex = 5;
             this.button1.Text = "Consultar";
             this.button1.UseVisualStyleBackColor = true;

@@ -9,10 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+/* 
+ * AUTOR: 901-12-4330 YONY CALITO
+ * VERSION: 2.3
+ * CREACION COD: 10/08/2016
+ * UD:14/08/2016
+ */
 namespace AsignaciondeCursos
 {
     public partial class form_historial : Form
     {
+        MySqlConnection con = Conexion.ObtenerConexion();
         public form_historial()
         {
             InitializeComponent();
@@ -20,22 +27,24 @@ namespace AsignaciondeCursos
 
         private void form_historial_Load(object sender, EventArgs e)
         {
-
-            DataTable dt = new DataTable();
-            DataTable dt2 = new DataTable();
-            string query = "SELECT DISTINCT cc.anio from catedratico_curso cc, catedratico c WHERE c.usuario = '"+Usuario.UserName+"' ORDER BY cc.anio desc;";
-//            string query2 = "SELECT DISTINCT cc.semestre from catedratico_curso cc, catedratico c WHERE c.usuario = '" + Usuario.UserName + "' ORDER BY cc.semestre desc;";
-            MySqlCommand cmd = new MySqlCommand(query, Conexion.ObtenerConexion());
-  //          MySqlCommand cmd2 = new MySqlCommand(query2, Conexion.ObtenerConexion());
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-    //        MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-            da.Fill(dt);
-            comboBox1.DisplayMember = "anio";
-            comboBox1.ValueMember = "anio";
-      //      comboBox2.DisplayMember = "semestre";
-        //    comboBox2.ValueMember = "semestre";
-          //  comboBox2.DataSource = dt2;
-            comboBox1.DataSource = dt;
+            try
+            {
+                MySqlConnection con = Conexion.ObtenerConexion();
+                DataTable dt = new DataTable();
+                DataTable dt2 = new DataTable();
+                string query = "SELECT DISTINCT cc.anio from catedratico_curso cc, catedratico c WHERE cc.id_catedratico = '" + Usuario.Cate_id + "' ORDER BY cc.anio desc;";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                comboBox1.DisplayMember = "anio";
+                comboBox1.ValueMember = "anio";
+                comboBox1.DataSource = dt;
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -45,12 +54,14 @@ namespace AsignaciondeCursos
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT cc.id_carrera, cc.codigo_curso, cc.id_jornada, cc.seccion,cc.id_edificio,cc.no_salon, cc.hora FROM catedratico_curso cc, catedratico c  WHERE (anio='"+comboBox1.Text+ "')AND (c.usuario ='" + Usuario.UserName + "')AND(semestre='" + comboBox2.Text + "')", Conexion.ObtenerConexion());
-                //MySqlCommand cmd = new MySqlCommand("SELECT * FROM Alumno", Conexion.ObtenerConexion());
+                MySqlConnection con = Conexion.ObtenerConexion();
+                //MySqlCommand cmd = new MySqlCommand("SELECT DISTINCT cc.id_carrera, cc.codigo_curso, cc.id_jornada, cc.seccion,cc.id_edificio,cc.no_salon, h.horario FROM catedratico_curso cc, catedratico c, horario h  WHERE (cc.anio='"+comboBox1.Text+ "')AND (cc.id_catedratico='" + Usuario.Cate_id + "')AND(cc.semestre='" + comboBox2.Text + "')",con);
+                MySqlCommand cmd = new MySqlCommand("SELECT DISTINCT cc.id_carrera, cc.codigo_curso, cc.id_jornada, cc.seccion,cc.id_edificio,cc.no_salon, h.horario FROM catedratico_curso cc INNER JOIN catedratico c ON cc.id_catedratico = c.id_catedratico INNER JOIN horario h ON cc.hora=h.hora  WHERE (cc.anio='" + comboBox1.Text + "')AND (cc.id_catedratico='" + Usuario.Cate_id + "')AND(cc.semestre='" + comboBox2.Text + "')", con);
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
+                con.Close();
             }
             catch (Exception ex)
             {
